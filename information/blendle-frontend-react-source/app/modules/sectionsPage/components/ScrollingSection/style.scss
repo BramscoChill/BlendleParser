@@ -1,0 +1,19 @@
+exports = module.exports = require("./../../../../../../../node_modules/css-loader/lib/css-base.js")();
+// imports
+
+
+// module
+exports.push([module.id, ".scrollingSection-nnk83{position:relative;white-space:nowrap;max-width:100vw;overflow-x:auto;padding:5px 15px 15px 5px;-webkit-overflow-scrolling:touch;scroll-snap-type:mandatory;scroll-snap-type-x:mandatory;scroll-snap-destination:50% 50%}.tileWrapper-3Uzg5{position:relative;display:inline-block;vertical-align:top;width:280px;height:350px;margin-left:10px;scroll-snap-align:center;scroll-snap-coordinate:50% 50%}", ""]);
+
+// exports
+exports.locals = {
+	"scrollingSection": "scrollingSection-nnk83",
+	"tileWrapper": "tileWrapper-3Uzg5"
+};
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/css-loader?modules&importLoaders=1&localIdentName=[local]-[hash:base64:5]!./~/sass-loader?outputStyle=compressed&includePaths[]=/home/jenkins/workspace/e_blendle-web-client_master-OGUROC6EFB77SMY4JEEDJFQNHMRBT3ZLBPPHNIGXKGWDHSUDQKLQ/src/scss!./src/js/app/modules/sectionsPage/components/ScrollingSection/style.scss
+// module id = 1641
+// module chunks = 1 16

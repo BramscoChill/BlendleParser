@@ -1,0 +1,24 @@
+exports = module.exports = require("./../../../../../../../node_modules/css-loader/lib/css-base.js")();
+// imports
+
+
+// module
+exports.push([module.id, ".container-1K-Wq{position:relative;width:100%;max-width:700px;padding:25px;margin:20px auto 47px;border-radius:5px;overflow:hidden;box-shadow:0 2px 4px rgba(0,0,0,.24);clear:both;display:flex;flex-direction:column}@media (min-width:550px){.container-1K-Wq{width:calc(100% - 40px);padding:30px;flex-direction:row;margin-bottom:40px}}.backdrop-gRqUK{position:absolute;top:0;left:0;z-index:0}.textContainer-1GU3W{flex:1 0;z-index:1}@media (min-width:550px){.textContainer-1GU3W{padding-right:30px}}.title-1ogi5{color:#fff;font-family:GT-Walsheim,sans-serif;font-weight:700;font-size:23px;margin-bottom:12px}@media (min-width:550px){.title-1ogi5{font-size:27px}}.body-3wx63{color:#fff;font-family:GT-Walsheim,sans-serif;font-size:15px}@media (min-width:550px){.body-3wx63{font-size:16px}}.buttonContainer-1hVQV{display:flex;text-decoration:none;z-index:1}.button-3ZjWI{width:100%;margin-top:20px;font-family:GT-Walsheim,sans-serif;font-weight:700;font-size:16px}@media (min-width:550px){.button-3ZjWI{width:auto;flex:1 0;margin-top:0;align-self:center}}", ""]);
+
+// exports
+exports.locals = {
+	"container": "container-1K-Wq",
+	"backdrop": "backdrop-gRqUK",
+	"textContainer": "textContainer-1GU3W",
+	"title": "title-1ogi5",
+	"body": "body-3wx63",
+	"buttonContainer": "buttonContainer-1hVQV",
+	"button": "button-3ZjWI"
+};
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/css-loader?modules&importLoaders=1&localIdentName=[local]-[hash:base64:5]!./~/sass-loader?outputStyle=compressed&includePaths[]=/home/jenkins/workspace/e_blendle-web-client_master-OGUROC6EFB77SMY4JEEDJFQNHMRBT3ZLBPPHNIGXKGWDHSUDQKLQ/src/scss!./src/js/app/modules/item/components/ReaderBanner/style.scss
+// module id = 1517
+// module chunks = 1 16 17

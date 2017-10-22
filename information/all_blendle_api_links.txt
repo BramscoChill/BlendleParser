@@ -1,0 +1,174 @@
+these are from: webpack:///./src/js/app/libs/byebye/mixins/links.js
+
+ab_test: {href: "https://ws-no-zoom.blendle.com/user/{user_id}/ab-test/{ab_test_id}", templated: true}
+account: {href: "https://static.blendle.nl/account.json"}
+advanced_search: {href: "https://ws.blendle.com/search{?q,offset,limit,max_…ax_words,category,provider_id,users,zoom,locales}", templated: true}
+adyen_payment_methods: {href: "https://ws-no-zoom.blendle.com/user/{user_id}/payment/adyen/methods", templated: true}
+adyen_payment_proposal: {href: "https://ws-no-zoom.blendle.com/user/{user_id}/payment/adyen/proposal", templated: true}
+adyen_place_order: {href: "https://ws-no-zoom.blendle.com/user/{user_id}/payment/adyen/order", templated: true}
+adyen_recurring_contracts: {href: "https://ws-no-zoom.blendle.com/user/{user_id}/payment/adyen/recurring_contracts", templated: true}
+alerts: {href: "https://ws.blendle.com/user/{user_id}/alerts", templated: true}
+all_posts: {href: "https://ws-no-zoom.blendle.com/posts"}
+apple_subscription_renewal: {href: "https://ws-no-zoom.blendle.com/apple_subscription_renewal"}
+avatars: {href: "https://ws.blendle.com/user/{user_id}/avatars", templated: true}
+b:entity_feed: {href: "https://ws-no-zoom.blendle.com/tiles/entity/{entity}{?amount}", templated: true}
+b:issues-by-channel-preferences: {href: "https://ws-no-zoom.blendle.com/issues/recent/by_channel_preferences{?channel_uid,amount}", templated: true}
+b:user_home: {href: "https://ws.blendle.com/user/{user_id}/home", templated: true}
+b:user_stories: {href: "https://ws-no-zoom.blendle.com/user/{user_id}/stories", templated: true}
+bulk_users: {href: "https://ws-no-zoom.blendle.com/bulk/users"}
+channels: {href: "https://ws-no-zoom.blendle.com/channels"}
+confirm_email: {href: "https://ws-no-zoom.blendle.com/confirmation_token/{token}", templated: true}
+coupons: {href: "https://ws.blendle.com/user/{user_id}/coupons", templated: true}
+credentials: {href: "https://ws-no-zoom.blendle.com/credentials"}
+curies: https://api.blendle.com/rel/{rel}
+deposits: {href: "https://ws.blendle.com/user/{user_id}/deposits{?amount,page,start,end,type}", templated: true}
+email_share: {href: "https://ws-no-zoom.blendle.com/user/{user_id}/email_share", templated: true}
+email_tokens: {href: "https://ws-no-zoom.blendle.com/email_tokens"}
+expired_subscription_upsell_email: {href: "https://ws.blendle.com/user/{user_id}/expired_subscription_upsell_email", templated: true}
+expiring_subscription_upsell_email: {href: "https://ws.blendle.com/user/{user_id}/expiring_subscription_upsell_email", templated: true}
+followers: {href: "https://ws.blendle.com/user/{user_id}/followers", templated: true}
+follows: {href: "https://ws.blendle.com/user/{user_id}/follows{?reason}", templated: true}
+i18n: {href: "https://ws-no-zoom.blendle.com/i18n"}
+issue: {href: "https://ws.blendle.com/issue/{issue_id}{?zoom}", templated: true}
+issue_acquisition: {href: "https://ws.blendle.com/issue/{issue_id}/acquisition{?user_context}", templated: true}
+issue_items: {href: "https://ws-no-zoom.blendle.com/issue/{issue_id}/items{?sort,limit}", templated: true}
+issue_metadata: {href: "https://ws.blendle.com/issue/meta/{issue_id}", templated: true, deprecation: "https://relishapp.com/blendle/blendle/docs/issues/get-issue-metadata"}
+issue_tiles: {href: "https://ws.blendle.com/issue/{issue_id}/tiles{?user_context,page,amount,sort}", templated: true}
+item: {href: "https://ws.blendle.com/item/{item_id}{?user_context,bundle_context}", templated: true}
+item_acquisition: {href: "https://ws.blendle.com/item/{item_id}/acquisition{?user_context}", templated: true}
+item_content: {href: "https://ws-no-zoom.blendle.com/item/{item_id}/content", templated: true}
+item_posts: {href: "https://ws.blendle.com/item/{item_id}/posts{?user_context}", templated: true}
+item_search: {href: "https://ws.blendle.com/item_search?q={query}{&zoom,locales,offset,amount}", templated: true}
+items_popular: {href: "https://ws.blendle.com/items/popular"}
+latest_issue: {href: "https://ws-no-zoom.blendle.com/issue/latest/{provider_id}", templated: true}
+latest_issues: {href: "https://static.blendle.nl/meta/publication/{provider_id}/calendar/most_recent.json", templated: true}
+location: {href: "https://ws-no-zoom.blendle.com/location/{latitude}/{longitude}", templated: true}
+login: {href: "https://ws-no-zoom.blendle.com/tokens"}
+logout: {href: "https://ws-no-zoom.blendle.com/tokens/{token}", templated: true}
+magic_login: {href: "https://ws-no-zoom.blendle.com/magic_login"}
+magic_login_action: {href: "https://ws-no-zoom.blendle.com/magic_login_action"}
+me: {href: "https://ws-no-zoom.blendle.com/me"}
+microservice_deep_dives: {href: "https://deep-dives.blendle.io/api.json"}
+microservice_subscriptions: {href: "https://subscription.blendle.com/api"}
+must_reads: {href: "https://static.blendle.nl/meta/assets/mustreads/{country_code}.json", templated: true}
+newsstand: {href: "https://ws-no-zoom.blendle.com/newsstand{?user_context}", templated: true}
+newsstands: {href: "https://static.blendle.nl/meta/newsstand/index.json"}
+notifications: {href: "https://static.blendle.com/notification_state.json", templated: true}
+oauth: {href: "https://ws.blendle.com/oauth/{oauth_provider}", templated: true}
+onboarding_newsstand: Array(3)
+0: {name: "US", href: "https://static.blendle.nl/meta/newsstand/location/ISO-3166-1/code/US/onboarding_publications.json"}
+1: {name: "NL", href: "https://static.blendle.nl/meta/newsstand/location/ISO-3166-1/code/NL/onboarding_publications.json"}
+2: {name: "DE", href: "https://static.blendle.nl/meta/newsstand/location/ISO-3166-1/code/DE/onboarding_publications.json"}
+onetimelink: {href: "https://ws-no-zoom.blendle.com/once/item/{item_id}/{service}", templated: true}
+order: {href: "https://ws-no-zoom.blendle.com/order/{order_id}", templated: true}
+orders: {href: "https://ws-no-zoom.blendle.com/orders"}
+password_reset: {href: "https://ws-no-zoom.blendle.com/password_reset"}
+popular_providers_for_user: {href: "https://ws-no-zoom.blendle.com/providers/popular?user_context={user_id}", templated: true}
+posts: {href: "https://ws.blendle.com/user/{user_id}/posts", templated: true}
+preferences: {href: "https://ws.blendle.com/user/{user_id}/preferences", templated: true}
+provider_configuration: {href: "https://static.blendle.nl/meta/publication/{provider_id}/provider_configuration.json", templated: true}
+provider_configurations: {href: "https://static.blendle.nl/provider_configurations.json"}
+provider_configurations_country: {href: "https://static.blendle.nl/meta/provider_configurations/country/%{code}/popular/index.json", templated: true}
+provider_statistics: {href: "https://ws.blendle.com/provider/{provider_id}/items/popular", templated: true}
+publications: {href: "https://static.blendle.nl/publications.json"}
+refund_reason: {href: "https://ws-no-zoom.blendle.com/user/{user_id}/refund_reason/{item_id}", templated: true}
+request_password_reset_token: {href: "https://ws-no-zoom.blendle.com/password_reset_token"}
+search: {href: "https://ws.blendle.com/search?q={query}{&zoom,locales}", templated: true}
+self: {href: "https://static.blendle.nl/api.json"}
+signup_code: {href: "https://ws-no-zoom.blendle.com/signup_code/{code}", templated: true}
+signup_rewards: {href: "https://ws.blendle.com/user/{user_id}/signup_rewards", templated: true}
+social_trending: {href: "https://static.blendle.nl/meta/social-score/{context}.json", templated: true}
+style: {href: "https://assets.blendle.com/styles/{provider_id}/main.json", templated: true}
+subscription_confirmation_email: {href: "https://ws.blendle.com/user/{user_id}/subscription_confirmation_email", templated: true}
+subscription_credentials: {href: "https://ws-no-zoom.blendle.com/provider/{provider_id}/subscription_credentials", templated: true}
+subscription_upsell_email: {href: "https://ws.blendle.com/user/{user_id}/subscription_upsell_email", templated: true}
+supported_countries: {href: "https://ws-no-zoom.blendle.com/supported_countries"}
+supported_country: {href: "https://ws-no-zoom.blendle.com/supported_countries/{country_code}", templated: true}
+supported_locales: {href: "https://ws-no-zoom.blendle.com/supported_locales"}
+tier: {href: "https://ws-no-zoom.blendle.com/tier/{tier_id}", templated: true}
+tier_price: {href: "https://ws-no-zoom.blendle.com/tier/{tier_id}/{currency}", templated: true}
+tiers: {href: "https://ws-no-zoom.blendle.com/tiers"}
+time_zones: {href: "https://static.blendle.nl/meta/assets/time_zones.json"}
+transactions: {href: "https://ws.blendle.com/user/{user_id}/transactions", templated: true}
+user: {href: "https://ws.blendle.com/user/{user_id}", templated: true}
+user_campaigns: {href: "https://ws.blendle.com/user/{user_id}/campaigns", templated: true}
+user_channels: {href: "https://ws.blendle.com/user/{user_id}/channels", templated: true}
+user_conversions: {href: "https://ws.blendle.com/user/{user_id}/conversions", templated: true}
+user_favourite: {href: "https://ws.blendle.com/user/{user_id}/favourite/{provider_id}", templated: true}
+user_favourites: {href: "https://ws.blendle.com/user/{user_id}/favourites", templated: true}
+user_favourites_category: {href: "https://ws.blendle.com/user/{user_id}/favourites/{category_id}", templated: true}
+user_following_tiles: {href: "https://ws.blendle.com/user/{user_id}/tiles/following{?user_context}", templated: true}
+user_issues: {href: "https://ws.blendle.com/user/{user_id}/issues", templated: true}
+user_item: {href: "https://ws.blendle.com/user/{user_id}/item/{item_id}{?zoom,bundle_context}", templated: true}
+user_item_acquisition: {href: "https://ws.blendle.com/user/{user_id}/items{?zoom}", templated: true}
+user_item_paragraph_progress: {href: "https://ws.blendle.com/user/{user_id}/paragraph_progress/item/{item_id}", templated: true}
+user_item_preference: {href: "https://ws.blendle.com/user/{user_id}/preference/item/{item_id}", templated: true}
+user_item_tile: {href: "https://ws.blendle.com/user/{user_id}/tile/item/{item_id}{?bundle_context}", templated: true}
+user_item_tiles: {href: "https://ws.blendle.com/user/{user_id}/tiles{?item_ids}", templated: true}
+user_items: {href: "https://ws.blendle.com/user/{user_id}/items", templated: true}
+user_masquerade: {href: "https://ws-no-zoom.blendle.com/user/{user_id}/masquerade", templated: true}
+user_orders: {href: "https://ws.blendle.com/user/{user_id}/orders{?product,start,end}", templated: true}
+user_paper_tiles: {href: "https://ws.blendle.com/user/{user_id}/tiles/premium{?user_context,bundle_uid}", templated: true}
+user_payment: {href: "https://ws-no-zoom.blendle.com/user/{user_id}/payment", templated: true, deprecation: "https://relishapp.com/blendle/blendle/docs/adyen/recurring-payments"}
+user_pin: {href: "https://ws.blendle.com/user/{user_id}/pin/{item_id}", templated: true}
+user_pin_tiles: {href: "https://ws.blendle.com/user/{user_id}/pins", templated: true}
+user_pins_timeline: {href: "https://ws.blendle.com/user/{user_id}/pins_timeline", templated: true, deprecation: "https://www.relishapp.com/blendle/blendle/docs/pins/pins-timeline"}
+user_post: {href: "https://ws.blendle.com/user/{user_id}/post/{item_id}", templated: true}
+user_posted_tiles: {href: "https://ws.blendle.com/user/{user_id}/tiles/posted{?user_context}", templated: true}
+user_preference_other_user: {href: "https://ws.blendle.com/user/{user_id}/preference/user/{other_user_id}", templated: true}
+user_preference_other_users: {href: "https://ws.blendle.com/user/{user_id}/preference/users{?feedback}", templated: true}
+user_preference_provider: {href: "https://ws.blendle.com/user/{user_id}/preference/provider/{provider_id}", templated: true}
+user_preference_providers: {href: "https://ws.blendle.com/user/{user_id}/preference/providers{?feedback}", templated: true}
+user_premium_tiles: {href: "https://ws.blendle.com/user/{user_id}/tiles/premium{?user_context,bundle_uid}", templated: true}
+user_profile: {href: "https://ws.blendle.com/user/{user_id}/most_purchased_providers", templated: true}
+user_provider_accounts: {href: "https://ws.blendle.com/user/{user_id}/provider_accounts", templated: true}
+user_purchase_tiles: {href: "https://ws.blendle.com/user/{user_id}/tiles/purchases", templated: true}
+user_refresh_token: {href: "https://ws-no-zoom.blendle.com/user/{user_id}/refresh_token/{refresh_token}", templated: true}
+user_refresh_tokens: {href: "https://ws-no-zoom.blendle.com/user/{user_id}/refresh_tokens", templated: true}
+user_resend_confirmation_email: {href: "https://ws.blendle.com/user/{user_id}/confirmation_email", templated: true}
+user_subscriptions: {href: "https://ws.blendle.com/user/{user_id}/subscriptions", templated: true}
+user_trending_tiles: {href: "https://ws.blendle.com/user/{user_id}/tiles/trending{?user_context,to,from,type}", templated: true}
+users: {href: "https://ws-no-zoom.blendle.com/users"}
+verify_coupon: {href: "https://ws.blendle.com/coupon/{code}", templated: true}
+verify_gift_card: {href: "https://ws.blendle.com/gift_card/{card_id}", templated: true}
+__proto__
+:
+constructor
+:
+ƒ Object()
+hasOwnProperty
+:
+ƒ hasOwnProperty()
+isPrototypeOf
+:
+ƒ isPrototypeOf()
+propertyIsEnumerable
+:
+ƒ propertyIsEnumerable()
+toLocaleString
+:
+ƒ toLocaleString()
+toString
+:
+ƒ toString()
+valueOf
+:
+ƒ valueOf()
+__defineGetter__
+:
+ƒ __defineGetter__()
+__defineSetter__
+:
+ƒ __defineSetter__()
+__lookupGetter__
+:
+ƒ __lookupGetter__()
+__lookupSetter__
+:
+ƒ __lookupSetter__()
+get __proto__
+:
+ƒ __proto__()
+set __proto__
+:
+ƒ __proto__()

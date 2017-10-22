@@ -1,0 +1,20 @@
+exports = module.exports = require("./../../../../../../../node_modules/css-loader/lib/css-base.js")();
+// imports
+
+
+// module
+exports.push([module.id, ".purchaseNotice-1cLOV{position:absolute;align-self:center;align-items:center;text-align:right;overflow:hidden;color:#948784;background:#fff;right:55px;max-height:20px;line-height:20px;white-space:nowrap;font-size:1em;cursor:pointer;max-width:0;text-decoration:none;animation:purchase-notice-_uGJG 10s 1s forwards}.l-mobile .purchaseNotice-1cLOV{display:inline-block;white-space:normal;animation:mobile-purchase-notice-tU9XH 5s 1s forwards;text-align:center;left:0;position:absolute;top:100%;z-index:-1;width:100%;max-height:0;max-width:100%}@media print{.purchaseNotice-1cLOV{display:none}}@keyframes purchase-notice-_uGJG{0%{max-width:0}2.5%{max-width:0}5%{max-width:100%}95%{max-width:100%}to{max-width:0}}@keyframes mobile-purchase-notice-tU9XH{0%{max-height:0}2.5%{max-height:0}5%{max-height:100%}90%{max-height:100%}to{max-height:0}}", ""]);
+
+// exports
+exports.locals = {
+	"purchaseNotice": "purchaseNotice-1cLOV",
+	"purchase-notice": "purchase-notice-_uGJG",
+	"mobile-purchase-notice": "mobile-purchase-notice-tU9XH"
+};
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/css-loader?modules&importLoaders=1&localIdentName=[local]-[hash:base64:5]!./~/sass-loader?outputStyle=compressed&includePaths[]=/home/jenkins/workspace/e_blendle-web-client_master-OGUROC6EFB77SMY4JEEDJFQNHMRBT3ZLBPPHNIGXKGWDHSUDQKLQ/src/scss!./src/js/app/modules/item/components/PurchaseNotice/style.scss
+// module id = 2199
+// module chunks = 1

@@ -1,0 +1,21 @@
+exports = module.exports = require("./../../../../../../../node_modules/css-loader/lib/css-base.js")();
+// imports
+
+
+// module
+exports.push([module.id, ".container-2jHAe{display:flex;justify-content:center;align-items:center;height:100vh}.body-2gehh{padding:20px;width:500px;max-width:100%}.body-2gehh .your-email{font-weight:700;color:#333}.body-2gehh a{text-decoration:none}.body-2gehh .lnk-block{position:relative;display:block;font-weight:700;padding-left:16px}.body-2gehh .lnk-block:before{content:\"\";position:absolute;left:0;top:4px;width:0;height:0;border:4px solid transparent;border-left:6px solid #ff6255}.copy-3tZVG{color:#948784;padding:20px 0;font-size:16px}.confirm-2rHNt{display:block;margin-top:2em;width:170px}", ""]);
+
+// exports
+exports.locals = {
+	"container": "container-2jHAe",
+	"body": "body-2gehh",
+	"copy": "copy-3tZVG",
+	"confirm": "confirm-2rHNt"
+};
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/css-loader?modules&importLoaders=1&localIdentName=[local]-[hash:base64:5]!./~/sass-loader?outputStyle=compressed&includePaths[]=/home/jenkins/workspace/e_blendle-web-client_master-OGUROC6EFB77SMY4JEEDJFQNHMRBT3ZLBPPHNIGXKGWDHSUDQKLQ/src/scss!./src/js/app/modules/item/components/ConfirmAccount/styles.scss
+// module id = 2175
+// module chunks = 1

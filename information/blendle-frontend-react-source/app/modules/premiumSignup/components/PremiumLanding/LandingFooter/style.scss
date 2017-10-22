@@ -1,0 +1,24 @@
+exports = module.exports = require("./../../../../../../../../node_modules/css-loader/lib/css-base.js")();
+// imports
+
+
+// module
+exports.push([module.id, ".footer-3mo3S{height:70px;display:flex;align-items:center;justify-content:space-between;padding:0 20px}.appStoreLinks-3FNOe{height:44px}@media screen and (max-width:600px){.appStoreLinks-3FNOe{display:none}}.appStoreLink-18tbv{margin-right:10px}.social-3F2zS{display:flex;height:100%;justify-content:flex-end;align-items:center}.socialIcon-32bZH{height:25px;padding:0 15px;cursor:pointer}.facebook-2niWP path{fill:#3a559b}.twitter-3xogQ path{fill:#55acee}", ""]);
+
+// exports
+exports.locals = {
+	"footer": "footer-3mo3S",
+	"appStoreLinks": "appStoreLinks-3FNOe",
+	"appStoreLink": "appStoreLink-18tbv",
+	"social": "social-3F2zS",
+	"socialIcon": "socialIcon-32bZH",
+	"facebook": "facebook-2niWP",
+	"twitter": "twitter-3xogQ"
+};
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/css-loader?modules&importLoaders=1&localIdentName=[local]-[hash:base64:5]!./~/sass-loader?outputStyle=compressed&includePaths[]=/home/jenkins/workspace/e_blendle-web-client_master-OGUROC6EFB77SMY4JEEDJFQNHMRBT3ZLBPPHNIGXKGWDHSUDQKLQ/src/scss!./src/js/app/modules/premiumSignup/components/PremiumLanding/LandingFooter/style.scss
+// module id = 2247
+// module chunks = 0

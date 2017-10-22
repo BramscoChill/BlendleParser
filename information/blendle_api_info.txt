@@ -1,0 +1,975 @@
+
+
+Transactions:
+fetch transactions with pageindex and page size
+	check in transaction what the date is
+save them in folders: YYYY MM articleID
+	save all the article images and stuff also in the month folder
+	
+settings date: last searched
+get transactions pageindex:1, pagesize:1
+compare that transaction date with the date in the settings
+	if the transaction date is after last search, start getting the transactions
+	compare each transaction date with the one from the settings
+		if the transaction date is before the settings, it is fetched
+always get all transactions
+search in all 
+
+Get latest datetime from disk
+get highest year dir
+get highest month dir
+get all transactions from that dir
+filter the one with the highest date
+
+
+
+h1 font-size: 54:[2.84] - "Century"
+h2 font-size: 17:[0.89] - little bold "Swift"
+kicker font-size: 28:[1.47] "Proxima Nova Condensed" little bold proxima-nova-condensed-w01-bold-500.woff
+byline font-size: 20:[1.05] - UPPERCASE "Proxima Nova Condensed"
+intro font-size: 28:[1.47] - UPPERCASE "Abadi"
+p font-size: 19:[1.0] - UPPERCASE "Swift"
+
+
+todo:
+not everyting in a separated directory, bud in the month dir
+
+article construction logic:
+we have an BlendleItem
+
+	Content body:
+		BlendleItem._embedded.content.body = array of text content item
+			this order is depending on the images
+			type = kicker, hl1, intro, byline, p, etc.
+			content = the content itself, with html tags in it
+	
+	Images:
+		BlendleItem._embedded.content._embedded.mediasets
+			position = position in whole document, this is 0 based, so after body item 22 this image will appear
+			type = mostly image
+			_embedded = image download information
+				BlendleItem._embedded.content._embedded.mediasets._embedded
+					original - large - medium - small
+						large._links.file = url direct image
+						large.width
+						large.height
+
+
+
+
+
+
+get payment info about article
+https://ws.blendle.com/item/bnl-filosofiemagazine-20160108-117256_filosofie_nacht
+
+info about article:
+https://ws.blendle.com/user/bklein333/tile/item/bnl-filosofiemagazine-20160108-117256_filosofie_nacht
+
+webpack:///./src/js/app/modules/issue/containers/IssueNavigationCalendarContainer.js
+"https://static.blendle.nl/meta/publication/filosofiemagazine/calendar/index.json"
+get all article urls in magazine:
+https://static.blendle.nl/publication/psychologie/2017/09/14/issue/version/1/manifest.json
+all items in array:     "items": [ = https://blendle.com/item/ + [item id]
+
+
+with both: Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiJ9.eyJleHAiOjE1MDY4MDgyNTgsInN1YiI6ImxvZ2luIiwidXNlcl91dWlkIjoiNjcxZGYwMjctMTk3Yy00ODBmLWI3OTctYjE2NDgxYTNiMjY4IiwidXNlcl9pZCI6ImJrbGVpbjMzMyJ9.q069Ukimhq5Ax6umt5ApHEpvWN7I9oS1H5wdEjSKeKcPIkNR3eifrkzZ5mWZG99Uj95xHONI04cifXg1QTiMCQ
+
+
+
+get content with:
+https://ws.blendle.com/item/bnl-psychologie-20170914-3d04a30b358/content
+
+if it gives payment required, buy it via subscription:
+POST:
+https://ws.blendle.com/user/bklein333/items
+{"id":"bnl-psychologie-20170914-3d04a30b358"}
+
+
+https://ws.blendle.com/user/bklein333/tile/item/bnl-psychologie-20170914-3d04a30b358
+https://ws.blendle.com/user/bklein333/paragraph_progress/item/item/bnl-psychologie-20170914-3d04a30b358
+https://ws.blendle.com/item/bnl-psychologie-20170914-3d04a30b358
+
+items
+article url to read:
+https://blendle.com/item/bnl-filosofiemagazine-20170929-a77e5215b4b
+https://blendle.com/item/bnl-psychologie-20170914-7da43f9643f
+https://blendle.com/item/bnl-psychologie-20170914-f412c810671
+https://blendle.com/item/bnl-psychologie-20170914-cab182b99ab
+https://blendle.com/item/bnl-psychologie-20170914-3d04a30b358
+https://blendle.com/item/bnl-filosofiemagazine-20170929-7015229629d
+https://blendle.com/item/bnl-filosofiemagazine-20170929-c1fb40a7980
+https://blendle.com/item/bnl-filosofiemagazine-20170929-f471a962dbe
+https://blendle.com/item/bnl-filosofiemagazine-20170825-28e83d353fe
+https://blendle.com/item/bnl-filosofiemagazine-20170630-395d47d2e8b
+https://blendle.com/item/bnl-psychologie-20160811-53674
+https://blendle.com/item/bnl-filosofiemagazine-20151204-103772_de_mens_is_een_zak_met_chemicali_n hl2
+https://blendle.com/item/bnl-psychologie-20170914-09043b6a400
+https://blendle.com/item/bnl-filosofiemagazine-20170929-d8a3fe42c22
+https://blendle.com/item/bnl-filosofiemagazine-20170929-e6486782c32
+https://blendle.com/item/bnl-filosofiemagazine-20160826-56962
+https://blendle.com/item/bnl-filosofiemagazine-20160930-74799
+https://blendle.com/item/bnl-filosofiemagazine-20170929-c1fb40a7980
+https://blendle.com/item/bnl-filosofiemagazine-20170929-36223c5cfe1
+https://blendle.com/item/pwb-vkn-20171008175738371
+https://blendle.com/item/
+https://blendle.com/item/
+https://blendle.com/item/
+https://blendle.com/item/
+https://blendle.com/item/
+https://blendle.com/item/
+
+
+
+get all articles:
+https://ws-no-zoom.blendle.com/issue/bnl-psychologie-20170914/items?page=2
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiJ9.eyJleHAiOjE1MDY4MDY5MDIsInN1YiI6ImxvZ2luIiwidXNlcl91dWlkIjoiNjcxZGYwMjctMTk3Yy00ODBmLWI3OTctYjE2NDgxYTNiMjY4IiwidXNlcl9pZCI6ImJrbGVpbjMzMyJ9.Njr0K8fQXaezr1t_GGDMmGw-L2_D_lZuh08T3D_wVXUGZtYEewVzaxccgXc7i3TPiV9hnlrHKttHaQixsCvLIw
+
+untill page 4 or something
+
+
+https://ws-no-zoom.blendle.com/issue/bnl-psychologie-20170914/items?sort=popular&limit=3 
+
+https://ws.blendle.com/user/bklein333/tile/item/bnl-psychologie-20170914-bfcc40dd24e
+
+ori browser url: https://blendle.com/issue/psychologie/bnl-psychologie-20170914
+
+https://static.blendle.nl/publication/psychologie/2017/09/14/issue/version/1/manifest.json
+https://static.blendle.nl/publication/psychologie/2017/09/14/pages/version/1/index3.json
+https://static.blendle.nl/publication/psychologie/2017/09/14/pages/version/1/image/medium/b1aec2762f23cabfeb0fc4abf6a4181ba3a8c9ea.jpg
+https://static.blendle.nl/publication/psychologie/2017/09/14/pages/version/1/image/medium/7628a9490892ea71f6a95935e313314ca38e622d.jpg
+https://static.blendle.nl/publication/psychologie/2017/09/14/pages/version/1/image/medium/db7a32979246b4c9a249842c55a498656de860cc.jpg
+https://static.blendle.nl/publication/psychologie/2017/09/14/pages/version/1/image/medium/e0224a551b5d08fa407b031ea52b614c8b9da15a.jpg
+https://static.blendle.nl/publication/psychologie/2017/09/14/pages/version/1/image/medium/149c26472cc04fe2029c92b126618caf1b075e24.jpg
+https://static.blendle.nl/publication/psychologie/2017/09/14/pages/version/1/index4.json
+
+
+https://static.blendle.nl/publication/psychologie/2017/09/14/issue/version/1/manifest.json:
+{
+	"format_version": 4,
+	"representations": ["pages"],
+	"_links": {
+		"self": {
+			"href": "https://static.blendle.nl/publication/psychologie/2017/09/14/issue/version/1/manifest.json"
+		},
+		"items_metadata": {
+			"href": "https://static.blendle.nl/publication/psychologie/2017/09/14/issue/version/1/items.json"
+		},
+		"permanent_metadata": {
+			"href": "https://static.blendle.nl/publication/psychologie/2017/09/14/issue/version/1/permanent/index.json"
+		},
+		"provider_metadata": {
+			"href": "s3://static.blendle.nl/publication/psychologie/2017/09/14/issue/version/1/private/metadata.json"
+		},
+		"cover": {
+			"href": "https://static.blendle.nl/publication/psychologie/2017/09/14/item/67914e2fb5a/version/1/manifest.json"
+		},
+		"month": {
+			"href": "https://static.blendle.nl/meta/publication/psychologie/calendar/year/2017/month/09/index.json"
+		},
+		"year": {
+			"href": "https://static.blendle.nl/meta/publication/psychologie/calendar/year/2017/index.json"
+		},
+		"years": {
+			"href": "https://static.blendle.nl/meta/publication/psychologie/calendar/index.json"
+		},
+		"pages": {
+			"href": "https://static.blendle.nl/publication/psychologie/2017/09/14/pages/version/1/index.json"
+		},
+		"page_preview": {
+			"href": "https://static.blendle.nl/publication/psychologie/2017/09/14/pages/version/1/image/medium/ce4d2a641de2bab707c5fb8ed12d8cd7a23f77db.jpg",
+			"width": 413,
+			"height": 550
+		}
+	},
+	"id": "bnl-psychologie-20170914",
+	"provider": {
+		"id": "psychologie"
+	},
+	"initial_publication_time": "2017-09-14T00:00:00+00:00",
+	"date": "2017-09-14T00:00:00+00:00",
+	"items": ["bnl-psychologie-20170914-c69e9244568",
+	"bnl-psychologie-20170914-ce8802c2e52",
+	"bnl-psychologie-20170914-fc897031850",
+	"bnl-psychologie-20170914-f019e0a72ad",
+	"bnl-psychologie-20170914-14643c0f5a7",
+	"bnl-psychologie-20170914-76af0d41b54",
+	"bnl-psychologie-20170914-9eaffd84725",
+	"bnl-psychologie-20170914-5975b0c28e7",
+	"bnl-psychologie-20170914-817a0db1f88",
+	"bnl-psychologie-20170914-cab182b99ab",
+	"bnl-psychologie-20170914-b7aa75ba0d7",
+	"bnl-psychologie-20170914-5789676a875",
+	"bnl-psychologie-20170914-09043b6a400",
+	"bnl-psychologie-20170914-bfcc40dd24e",
+	"bnl-psychologie-20170914-e1ffe0c1b4b",
+	"bnl-psychologie-20170914-1b71bf6c104",
+	"bnl-psychologie-20170914-de4983bdcc7",
+	"bnl-psychologie-20170914-aba978c35d2",
+	"bnl-psychologie-20170914-f652fc0fd67",
+	"bnl-psychologie-20170914-bc5ef4741a9",
+	"bnl-psychologie-20170914-8ba307c4f12",
+	"bnl-psychologie-20170914-3d04a30b358",
+	"bnl-psychologie-20170914-2bea538b643",
+	"bnl-psychologie-20170914-c9650badee6",
+	"bnl-psychologie-20170914-e6b1fc81338",
+	"bnl-psychologie-20170914-01bc30029f6",
+	"bnl-psychologie-20170914-2bf7f008a7d",
+	"bnl-psychologie-20170914-f412c810671",
+	"bnl-psychologie-20170914-cf52a3fcd4c",
+	"bnl-psychologie-20170914-6257775f7ee",
+	"bnl-psychologie-20170914-7da43f9643f",
+	"bnl-psychologie-20170914-67914e2fb5a"],
+	"_embedded": {
+		"permanent_metadata": {
+			"_links": {
+				"self": {
+					"href": "https://static.blendle.nl/publication/psychologie/2017/09/14/issue/version/1/permanent/index.json"
+				}
+			},
+			"created_at": "2017-09-14T02:00:44+00:00",
+			"updated_at": "2017-09-14T02:00:44+00:00"
+		}
+	}
+}
+
+https://static.blendle.nl/meta/publication/psychologie/calendar/year/2017/month/09/index.json
+https://static.blendle.nl/meta/publication/psychologie/calendar/year/2017/month/03/index.json
+{
+	"_links": {
+		"self": {
+			"href": "https://static.blendle.nl/meta/publication/psychologie/calendar/year/2017/month/09/index.json"
+		},
+		"year": {
+			"href": "https://static.blendle.nl/meta/publication/psychologie/calendar/year/2017/index.json"
+		},
+		"next": {
+			"href": "https://static.blendle.nl/meta/publication/psychologie/calendar/year/2017/month/08/index.json"
+		}
+	},
+	"_embedded": {
+		"issues": [{
+			"format_version": 4,
+			"representations": ["pages"],
+			"_links": {
+				"self": {
+					"href": "https://static.blendle.nl/publication/psychologie/2017/09/14/issue/version/1/manifest.json"
+				},
+				"items_metadata": {
+					"href": "https://static.blendle.nl/publication/psychologie/2017/09/14/issue/version/1/items.json"
+				},
+				"permanent_metadata": {
+					"href": "https://static.blendle.nl/publication/psychologie/2017/09/14/issue/version/1/permanent/index.json"
+				},
+				"provider_metadata": {
+					"href": "s3://static.blendle.nl/publication/psychologie/2017/09/14/issue/version/1/private/metadata.json"
+				},
+				"cover": {
+					"href": "https://static.blendle.nl/publication/psychologie/2017/09/14/item/67914e2fb5a/version/1/manifest.json"
+				},
+				"month": {
+					"href": "https://static.blendle.nl/meta/publication/psychologie/calendar/year/2017/month/09/index.json"
+				},
+				"year": {
+					"href": "https://static.blendle.nl/meta/publication/psychologie/calendar/year/2017/index.json"
+				},
+				"years": {
+					"href": "https://static.blendle.nl/meta/publication/psychologie/calendar/index.json"
+				},
+				"pages": {
+					"href": "https://static.blendle.nl/publication/psychologie/2017/09/14/pages/version/1/index.json"
+				},
+				"page_preview": {
+					"href": "https://static.blendle.nl/publication/psychologie/2017/09/14/pages/version/1/image/medium/ce4d2a641de2bab707c5fb8ed12d8cd7a23f77db.jpg",
+					"width": 413,
+					"height": 550
+				}
+			},
+			"id": "bnl-psychologie-20170914",
+			"provider": {
+				"id": "psychologie"
+			},
+			"initial_publication_time": "2017-09-14T00:00:00+00:00",
+			"date": "2017-09-14T00:00:00+00:00",
+			"items": ["bnl-psychologie-20170914-c69e9244568",
+			"bnl-psychologie-20170914-ce8802c2e52",
+			"bnl-psychologie-20170914-fc897031850",
+			"bnl-psychologie-20170914-f019e0a72ad",
+			"bnl-psychologie-20170914-14643c0f5a7",
+			"bnl-psychologie-20170914-76af0d41b54",
+			"bnl-psychologie-20170914-9eaffd84725",
+			"bnl-psychologie-20170914-5975b0c28e7",
+			"bnl-psychologie-20170914-817a0db1f88",
+			"bnl-psychologie-20170914-cab182b99ab",
+			"bnl-psychologie-20170914-b7aa75ba0d7",
+			"bnl-psychologie-20170914-5789676a875",
+			"bnl-psychologie-20170914-09043b6a400",
+			"bnl-psychologie-20170914-bfcc40dd24e",
+			"bnl-psychologie-20170914-e1ffe0c1b4b",
+			"bnl-psychologie-20170914-1b71bf6c104",
+			"bnl-psychologie-20170914-de4983bdcc7",
+			"bnl-psychologie-20170914-aba978c35d2",
+			"bnl-psychologie-20170914-f652fc0fd67",
+			"bnl-psychologie-20170914-bc5ef4741a9",
+			"bnl-psychologie-20170914-8ba307c4f12",
+			"bnl-psychologie-20170914-3d04a30b358",
+			"bnl-psychologie-20170914-2bea538b643",
+			"bnl-psychologie-20170914-c9650badee6",
+			"bnl-psychologie-20170914-e6b1fc81338",
+			"bnl-psychologie-20170914-01bc30029f6",
+			"bnl-psychologie-20170914-2bf7f008a7d",
+			"bnl-psychologie-20170914-f412c810671",
+			"bnl-psychologie-20170914-cf52a3fcd4c",
+			"bnl-psychologie-20170914-6257775f7ee",
+			"bnl-psychologie-20170914-7da43f9643f",
+			"bnl-psychologie-20170914-67914e2fb5a"],
+			"_embedded": {
+				"permanent_metadata": {
+					"_links": {
+						"self": {
+							"href": "https://static.blendle.nl/publication/psychologie/2017/09/14/issue/version/1/permanent/index.json"
+						}
+					},
+					"created_at": "2017-09-14T02:00:44+00:00",
+					"updated_at": "2017-09-14T02:00:44+00:00"
+				}
+			}
+		}]
+	},
+	"year": 2017,
+	"month": 9,
+	"days": [14]
+}
+{
+	"_links": {
+		"self": {
+			"href": "https://static.blendle.nl/meta/publication/psychologie/calendar/year/2017/month/03/index.json"
+		},
+		"year": {
+			"href": "https://static.blendle.nl/meta/publication/psychologie/calendar/year/2017/index.json"
+		},
+		"next": {
+			"href": "https://static.blendle.nl/meta/publication/psychologie/calendar/year/2017/month/02/index.json"
+		},
+		"prev": {
+			"href": "https://static.blendle.nl/meta/publication/psychologie/calendar/year/2017/month/04/index.json"
+		}
+	},
+	"_embedded": {
+		"issues": [{
+			"format_version": 4,
+			"representations": ["pages"],
+			"_links": {
+				"self": {
+					"href": "https://static.blendle.nl/publication/psychologie/2017/03/16/issue/version/1/manifest.json"
+				},
+				"items_metadata": {
+					"href": "https://static.blendle.nl/publication/psychologie/2017/03/16/issue/version/1/items.json"
+				},
+				"permanent_metadata": {
+					"href": "https://static.blendle.nl/publication/psychologie/2017/03/16/issue/version/1/permanent/index.json"
+				},
+				"provider_metadata": {
+					"href": "s3://static.blendle.nl/publication/psychologie/2017/03/16/issue/version/1/private/metadata.json"
+				},
+				"cover": {
+					"href": "https://static.blendle.nl/publication/psychologie/2017/03/16/item/5794366d891/version/1/manifest.json"
+				},
+				"month": {
+					"href": "https://static.blendle.nl/meta/publication/psychologie/calendar/year/2017/month/03/index.json"
+				},
+				"year": {
+					"href": "https://static.blendle.nl/meta/publication/psychologie/calendar/year/2017/index.json"
+				},
+				"years": {
+					"href": "https://static.blendle.nl/meta/publication/psychologie/calendar/index.json"
+				},
+				"pages": {
+					"href": "https://static.blendle.nl/publication/psychologie/2017/03/16/pages/version/1/index.json"
+				},
+				"page_preview": {
+					"href": "https://static.blendle.nl/publication/psychologie/2017/03/16/pages/version/1/image/medium/f395e41471917b184ccd628f32c0079ef457bbd9.jpg",
+					"width": 413,
+					"height": 550
+				}
+			},
+			"id": "bnl-psychologie-20170316",
+			"provider": {
+				"id": "psychologie"
+			},
+			"initial_publication_time": "2017-03-16T00:00:00+00:00",
+			"date": "2017-03-16T00:00:00+00:00",
+			"items": ["bnl-psychologie-20170316-d9d32f4cf46",
+			"bnl-psychologie-20170316-759dd8a9825",
+			"bnl-psychologie-20170316-12fc94ee71b",
+			"bnl-psychologie-20170316-2ee6a028e24",
+			"bnl-psychologie-20170316-d52361e3e72",
+			"bnl-psychologie-20170316-fe98185d3c7",
+			"bnl-psychologie-20170316-153e621ec77",
+			"bnl-psychologie-20170316-ac0120d843e",
+			"bnl-psychologie-20170316-3c2c515b56a",
+			"bnl-psychologie-20170316-ebdfd1f6de0",
+			"bnl-psychologie-20170316-432140b9b7d",
+			"bnl-psychologie-20170316-aff6a0dfce9",
+			"bnl-psychologie-20170316-9a0c65fd6f8",
+			"bnl-psychologie-20170316-31c6d0984b5",
+			"bnl-psychologie-20170316-59fdb220b33",
+			"bnl-psychologie-20170316-f06353c3e5e",
+			"bnl-psychologie-20170316-2b0c5aedc7d",
+			"bnl-psychologie-20170316-5b97daae1e9",
+			"bnl-psychologie-20170316-9b701985bb5",
+			"bnl-psychologie-20170316-30f7d64f778",
+			"bnl-psychologie-20170316-7620d9cb4be",
+			"bnl-psychologie-20170316-ff1d4c65620",
+			"bnl-psychologie-20170316-7a8df378073",
+			"bnl-psychologie-20170316-5308fa14216",
+			"bnl-psychologie-20170316-891ce7f0363",
+			"bnl-psychologie-20170316-853bfa2112d",
+			"bnl-psychologie-20170316-912bba658b4",
+			"bnl-psychologie-20170316-5a253642026",
+			"bnl-psychologie-20170316-e815280c460",
+			"bnl-psychologie-20170316-8cc9a1175b6",
+			"bnl-psychologie-20170316-38b17146287",
+			"bnl-psychologie-20170316-5794366d891"],
+			"_embedded": {
+				"permanent_metadata": {
+					"updated_at": "2017-03-15T14:11:21+00:00",
+					"created_at": "2017-03-15T13:26:47+00:00",
+					"_links": {
+						"self": {
+							"href": "https://static.blendle.nl/publication/psychologie/2017/03/16/issue/version/1/permanent/index.json"
+						}
+					}
+				}
+			}
+		}]
+	},
+	"year": 2017,
+	"month": 3,
+	"days": [16]
+}
+
+
+
+
+
+
+
+
+article example content:
+{
+    "_links": {
+        "self": {
+            "href": "https://ws.blendle.com/item/bnl-psychologie-20170914-67914e2fb5a/content"
+        },
+        "posts": {
+            "href": "https://ws.blendle.com/item/bnl-psychologie-20170914-67914e2fb5a/posts"
+        },
+        "user_posts": {
+            "href": "https://ws.blendle.com/user/bklein333/posts"
+        }
+    },
+    "_embedded": {
+        "content": {
+            "provider": {
+                "id": "psychologie"
+            },
+            "_links": {
+                "self": {
+                    "href": "s3://static.blendle.nl/publication/psychologie/2017/09/14/item/67914e2fb5a/version/1/private/content.json"
+                },
+                "b:media-sets": [
+                    {
+                        "href": "s3://static.blendle.nl/publication/psychologie/2017/09/14/item/67914e2fb5a/version/1/media-set/fd3bd65d0540cf857146ba09e85d7b28f207cbd8/private/index.json"
+                    }
+                ]
+            },
+            "images": [
+                {
+                    "_links": {
+                        "original": {
+                            "height": 572,
+                            "href": "https://publication-approval.blendleimg.com/publication/psychologie/2017/09/14/item/67914e2fb5a/version/1/image/original/fd3bd65d0540cf857146ba09e85d7b28f207cbd8.jpg",
+                            "width": 604
+                        },
+                        "large": {
+                            "height": 572,
+                            "href": "https://static.blendle.nl/publication/psychologie/2017/09/14/item/67914e2fb5a/version/1/image/large/fd3bd65d0540cf857146ba09e85d7b28f207cbd8.jpg",
+                            "width": 604
+                        },
+                        "small": {
+                            "height": 284,
+                            "href": "https://static.blendle.nl/publication/psychologie/2017/09/14/item/67914e2fb5a/version/1/image/small/fd3bd65d0540cf857146ba09e85d7b28f207cbd8.jpg",
+                            "width": 300
+                        },
+                        "medium": {
+                            "height": 568,
+                            "href": "https://static.blendle.nl/publication/psychologie/2017/09/14/item/67914e2fb5a/version/1/image/medium/fd3bd65d0540cf857146ba09e85d7b28f207cbd8.jpg",
+                            "width": 600
+                        }
+                    },
+                    "featured": true
+                }
+            ],
+            "item_index": 31,
+            "id": "bnl-psychologie-20170914-67914e2fb5a",
+            "date": "2017-09-14T00:00:00+00:00",
+            "issue": {
+                "id": "bnl-psychologie-20170914"
+            },
+            "streamers": [
+                {
+                    "type": "streamer",
+                    "content": "‘Slapen zonder voorwaarden is makkelijker dan je denkt’",
+                    "position": 2
+                }
+            ],
+            "_embedded": {
+                "b:media-sets": [
+                    {
+                        "type": "image",
+                        "_links": {
+                            "original": {
+                                "href": "s3://static.blendle.nl/publication/psychologie/2017/09/14/item/67914e2fb5a/version/1/media-set/fd3bd65d0540cf857146ba09e85d7b28f207cbd8/variant/original/private/index.json"
+                            },
+                            "large": {
+                                "href": "s3://static.blendle.nl/publication/psychologie/2017/09/14/item/67914e2fb5a/version/1/media-set/fd3bd65d0540cf857146ba09e85d7b28f207cbd8/variant/large/private/index.json"
+                            },
+                            "self": {
+                                "href": "s3://static.blendle.nl/publication/psychologie/2017/09/14/item/67914e2fb5a/version/1/media-set/fd3bd65d0540cf857146ba09e85d7b28f207cbd8/private/index.json"
+                            },
+                            "medium": {
+                                "href": "s3://static.blendle.nl/publication/psychologie/2017/09/14/item/67914e2fb5a/version/1/media-set/fd3bd65d0540cf857146ba09e85d7b28f207cbd8/variant/medium/private/index.json"
+                            },
+                            "small": {
+                                "href": "s3://static.blendle.nl/publication/psychologie/2017/09/14/item/67914e2fb5a/version/1/media-set/fd3bd65d0540cf857146ba09e85d7b28f207cbd8/variant/small/private/index.json"
+                            }
+                        },
+                        "position": 1,
+                        "_embedded": {
+                            "original": {
+                                "_links": {
+                                    "self": {
+                                        "href": "s3://static.blendle.nl/publication/psychologie/2017/09/14/item/67914e2fb5a/version/1/media-set/fd3bd65d0540cf857146ba09e85d7b28f207cbd8/variant/original/private/index.json"
+                                    },
+                                    "file": {
+                                        "href": "https://publication-approval.blendleimg.com/publication/psychologie/2017/09/14/item/67914e2fb5a/version/1/image/original/fd3bd65d0540cf857146ba09e85d7b28f207cbd8.jpg"
+                                    }
+                                },
+                                "height": 572,
+                                "width": 604
+                            },
+                            "large": {
+                                "_links": {
+                                    "self": {
+                                        "href": "s3://static.blendle.nl/publication/psychologie/2017/09/14/item/67914e2fb5a/version/1/media-set/fd3bd65d0540cf857146ba09e85d7b28f207cbd8/variant/large/private/index.json"
+                                    },
+                                    "file": {
+                                        "href": "https://static.blendle.nl/publication/psychologie/2017/09/14/item/67914e2fb5a/version/1/image/large/fd3bd65d0540cf857146ba09e85d7b28f207cbd8.jpg"
+                                    }
+                                },
+                                "height": 572,
+                                "width": 604
+                            },
+                            "small": {
+                                "_links": {
+                                    "self": {
+                                        "href": "s3://static.blendle.nl/publication/psychologie/2017/09/14/item/67914e2fb5a/version/1/media-set/fd3bd65d0540cf857146ba09e85d7b28f207cbd8/variant/small/private/index.json"
+                                    },
+                                    "file": {
+                                        "href": "https://static.blendle.nl/publication/psychologie/2017/09/14/item/67914e2fb5a/version/1/image/small/fd3bd65d0540cf857146ba09e85d7b28f207cbd8.jpg"
+                                    }
+                                },
+                                "height": 284,
+                                "width": 300
+                            },
+                            "medium": {
+                                "_links": {
+                                    "self": {
+                                        "href": "s3://static.blendle.nl/publication/psychologie/2017/09/14/item/67914e2fb5a/version/1/media-set/fd3bd65d0540cf857146ba09e85d7b28f207cbd8/variant/medium/private/index.json"
+                                    },
+                                    "file": {
+                                        "href": "https://static.blendle.nl/publication/psychologie/2017/09/14/item/67914e2fb5a/version/1/image/medium/fd3bd65d0540cf857146ba09e85d7b28f207cbd8.jpg"
+                                    }
+                                },
+                                "height": 568,
+                                "width": 600
+                            }
+                        }
+                    }
+                ],
+                "items": [
+                    {
+                        "images": [
+                            {
+                                "_links": {
+                                    "original": {
+                                        "height": 575,
+                                        "href": "https://publication-approval.blendleimg.com/publication/psychologie/2017/09/14/item/67914e2fb5a/version/1/image/original/64b1e3aacf9cfa3832a15e7433aa5098bb42037e.jpg",
+                                        "width": 596
+                                    },
+                                    "large": {
+                                        "height": 575,
+                                        "href": "https://static.blendle.nl/publication/psychologie/2017/09/14/item/67914e2fb5a/version/1/image/large/64b1e3aacf9cfa3832a15e7433aa5098bb42037e.jpg",
+                                        "width": 596
+                                    },
+                                    "small": {
+                                        "height": 289,
+                                        "href": "https://static.blendle.nl/publication/psychologie/2017/09/14/item/67914e2fb5a/version/1/image/small/64b1e3aacf9cfa3832a15e7433aa5098bb42037e.jpg",
+                                        "width": 300
+                                    },
+                                    "medium": {
+                                        "height": 575,
+                                        "href": "https://static.blendle.nl/publication/psychologie/2017/09/14/item/67914e2fb5a/version/1/image/medium/64b1e3aacf9cfa3832a15e7433aa5098bb42037e.jpg",
+                                        "width": 596
+                                    }
+                                },
+                                "credit": "FOTO: KEE&amp;KEE",
+                                "featured": true
+                            }
+                        ],
+                        "body": [
+                            {
+                                "type": "hl1",
+                                "content": "Confrontatie met alzheimer"
+                            },
+                            {
+                                "type": "p",
+                                "content": "Journalist <strong>Brenda van Osch</strong> interviewde Cynthia, wier man Michel al op zijn 39ste alzheimer heeft. Op een gegeven moment kwam Michel er zelf bij zitten. ‘Hij deed zijn best om mee te praten en maakte wat grapjes. Aanvankelijk dacht ik: hij \u00adbegrijpt behoorlijk veel. Maar toen merkte ik dat hij alleen reageerde op woorden en zinnen die hij kent; hij kon het gesprek niet volgen. Heel triest en ontroerend vond ik dat. Ik zag dat hij zich dat zelf af en toe ook realiseerde. Hij vertelde dat hij een manier heeft gevonden om met zijn eigen verdriet om te gaan: “Als ik het echt niet meer weet, ga ik fietsen”.’"
+                            },
+                            {
+                                "type": "p",
+                                "content": "<strong>// Pagina 54: Cynthia: ‘We waren liefdespartners, maar nu bemoeder ik hem’</strong>"
+                            }
+                        ],
+                        "_embedded": {
+                            "b:media-sets": [
+                                {
+                                    "_links": {
+                                        "original": {
+                                            "href": "s3://static.blendle.nl/media-set/64b1e3aacf9cfa3832a15e7433aa5098bb42037e/variant/original/private/index.json"
+                                        },
+                                        "large": {
+                                            "href": "s3://static.blendle.nl/media-set/64b1e3aacf9cfa3832a15e7433aa5098bb42037e/variant/large/private/index.json"
+                                        },
+                                        "self": {
+                                            "href": "s3://static.blendle.nl//media-set/64b1e3aacf9cfa3832a15e7433aa5098bb42037e/private/index.json"
+                                        },
+                                        "medium": {
+                                            "href": "s3://static.blendle.nl/media-set/64b1e3aacf9cfa3832a15e7433aa5098bb42037e/variant/medium/private/index.json"
+                                        },
+                                        "small": {
+                                            "href": "s3://static.blendle.nl/media-set/64b1e3aacf9cfa3832a15e7433aa5098bb42037e/variant/small/private/index.json"
+                                        }
+                                    },
+                                    "type": "image",
+                                    "position": 1,
+                                    "credit": "FOTO: KEE&amp;KEE",
+                                    "_embedded": {
+                                        "original": {
+                                            "_links": {
+                                                "self": {
+                                                    "href": "s3://static.blendle.nl/media-set/64b1e3aacf9cfa3832a15e7433aa5098bb42037e/variant/original/private/index.json"
+                                                },
+                                                "file": {
+                                                    "href": "https://publication-approval.blendleimg.com/publication/psychologie/2017/09/14/item/67914e2fb5a/version/1/image/original/64b1e3aacf9cfa3832a15e7433aa5098bb42037e.jpg"
+                                                }
+                                            },
+                                            "height": 575,
+                                            "width": 596
+                                        },
+                                        "large": {
+                                            "_links": {
+                                                "self": {
+                                                    "href": "s3://static.blendle.nl/media-set/64b1e3aacf9cfa3832a15e7433aa5098bb42037e/variant/large/private/index.json"
+                                                },
+                                                "file": {
+                                                    "href": "https://static.blendle.nl/publication/psychologie/2017/09/14/item/67914e2fb5a/version/1/image/large/64b1e3aacf9cfa3832a15e7433aa5098bb42037e.jpg"
+                                                }
+                                            },
+                                            "height": 575,
+                                            "width": 596
+                                        },
+                                        "small": {
+                                            "_links": {
+                                                "self": {
+                                                    "href": "s3://static.blendle.nl/media-set/64b1e3aacf9cfa3832a15e7433aa5098bb42037e/variant/small/private/index.json"
+                                                },
+                                                "file": {
+                                                    "href": "https://static.blendle.nl/publication/psychologie/2017/09/14/item/67914e2fb5a/version/1/image/small/64b1e3aacf9cfa3832a15e7433aa5098bb42037e.jpg"
+                                                }
+                                            },
+                                            "height": 289,
+                                            "width": 300
+                                        },
+                                        "medium": {
+                                            "_links": {
+                                                "self": {
+                                                    "href": "s3://static.blendle.nl/media-set/64b1e3aacf9cfa3832a15e7433aa5098bb42037e/variant/medium/private/index.json"
+                                                },
+                                                "file": {
+                                                    "href": "https://static.blendle.nl/publication/psychologie/2017/09/14/item/67914e2fb5a/version/1/image/medium/64b1e3aacf9cfa3832a15e7433aa5098bb42037e.jpg"
+                                                }
+                                            },
+                                            "height": 575,
+                                            "width": 596
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "images": [
+                            {
+                                "_links": {
+                                    "original": {
+                                        "height": 482,
+                                        "href": "https://publication-approval.blendleimg.com/publication/psychologie/2017/09/14/item/67914e2fb5a/version/1/image/original/01deec191d5afd05cf8190b822950c6e34cffb6c.png",
+                                        "width": 603
+                                    },
+                                    "large": {
+                                        "height": 482,
+                                        "href": "https://static.blendle.nl/publication/psychologie/2017/09/14/item/67914e2fb5a/version/1/image/large/01deec191d5afd05cf8190b822950c6e34cffb6c.png",
+                                        "width": 603
+                                    },
+                                    "small": {
+                                        "height": 240,
+                                        "href": "https://static.blendle.nl/publication/psychologie/2017/09/14/item/67914e2fb5a/version/1/image/small/01deec191d5afd05cf8190b822950c6e34cffb6c.png",
+                                        "width": 300
+                                    },
+                                    "medium": {
+                                        "height": 480,
+                                        "href": "https://static.blendle.nl/publication/psychologie/2017/09/14/item/67914e2fb5a/version/1/image/medium/01deec191d5afd05cf8190b822950c6e34cffb6c.png",
+                                        "width": 600
+                                    }
+                                },
+                                "credit": "FOTO: KEES VAN BOXTEL",
+                                "featured": true
+                            }
+                        ],
+                        "body": [
+                            {
+                                "type": "hl1",
+                                "content": "Heel gewone kinderen"
+                            },
+                            {
+                                "type": "p",
+                                "content": "Op een school in Breda maakten fotografes <strong>Sanna van Renesse</strong> (midden) en <strong>Simone Henken</strong> (rechts) \u00adportretten van piepjonge asielzoekers. ‘We zagen al die tv-beelden van vluchtelingen en vroegen ons af hoe het voor mensen, en vooral kinderen, moet zijn om huis en haard te verlaten en in een vreemd land opnieuw te beginnen. Ze zijn kwetsbaar, hoopvol, eigenwijs, lief; net als alle kinderen. Met deze fotoserie hopen we de vaak negatieve beeldvorming over vluchtelingen te verzachten.’"
+                            },
+                            {
+                                "type": "p",
+                                "content": "<strong>// Pagina 71: De veerkracht van Noor, Rokaia, Montaser en Ghna</strong>"
+                            }
+                        ],
+                        "_embedded": {
+                            "b:media-sets": [
+                                {
+                                    "_links": {
+                                        "original": {
+                                            "href": "s3://static.blendle.nl/media-set/01deec191d5afd05cf8190b822950c6e34cffb6c/variant/original/private/index.json"
+                                        },
+                                        "large": {
+                                            "href": "s3://static.blendle.nl/media-set/01deec191d5afd05cf8190b822950c6e34cffb6c/variant/large/private/index.json"
+                                        },
+                                        "self": {
+                                            "href": "s3://static.blendle.nl//media-set/01deec191d5afd05cf8190b822950c6e34cffb6c/private/index.json"
+                                        },
+                                        "medium": {
+                                            "href": "s3://static.blendle.nl/media-set/01deec191d5afd05cf8190b822950c6e34cffb6c/variant/medium/private/index.json"
+                                        },
+                                        "small": {
+                                            "href": "s3://static.blendle.nl/media-set/01deec191d5afd05cf8190b822950c6e34cffb6c/variant/small/private/index.json"
+                                        }
+                                    },
+                                    "type": "image",
+                                    "position": 1,
+                                    "credit": "FOTO: KEES VAN BOXTEL",
+                                    "_embedded": {
+                                        "original": {
+                                            "_links": {
+                                                "self": {
+                                                    "href": "s3://static.blendle.nl/media-set/01deec191d5afd05cf8190b822950c6e34cffb6c/variant/original/private/index.json"
+                                                },
+                                                "file": {
+                                                    "href": "https://publication-approval.blendleimg.com/publication/psychologie/2017/09/14/item/67914e2fb5a/version/1/image/original/01deec191d5afd05cf8190b822950c6e34cffb6c.png"
+                                                }
+                                            },
+                                            "height": 482,
+                                            "width": 603
+                                        },
+                                        "large": {
+                                            "_links": {
+                                                "self": {
+                                                    "href": "s3://static.blendle.nl/media-set/01deec191d5afd05cf8190b822950c6e34cffb6c/variant/large/private/index.json"
+                                                },
+                                                "file": {
+                                                    "href": "https://static.blendle.nl/publication/psychologie/2017/09/14/item/67914e2fb5a/version/1/image/large/01deec191d5afd05cf8190b822950c6e34cffb6c.png"
+                                                }
+                                            },
+                                            "height": 482,
+                                            "width": 603
+                                        },
+                                        "small": {
+                                            "_links": {
+                                                "self": {
+                                                    "href": "s3://static.blendle.nl/media-set/01deec191d5afd05cf8190b822950c6e34cffb6c/variant/small/private/index.json"
+                                                },
+                                                "file": {
+                                                    "href": "https://static.blendle.nl/publication/psychologie/2017/09/14/item/67914e2fb5a/version/1/image/small/01deec191d5afd05cf8190b822950c6e34cffb6c.png"
+                                                }
+                                            },
+                                            "height": 240,
+                                            "width": 300
+                                        },
+                                        "medium": {
+                                            "_links": {
+                                                "self": {
+                                                    "href": "s3://static.blendle.nl/media-set/01deec191d5afd05cf8190b822950c6e34cffb6c/variant/medium/private/index.json"
+                                                },
+                                                "file": {
+                                                    "href": "https://static.blendle.nl/publication/psychologie/2017/09/14/item/67914e2fb5a/version/1/image/medium/01deec191d5afd05cf8190b822950c6e34cffb6c.png"
+                                                }
+                                            },
+                                            "height": 480,
+                                            "width": 600
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "body": [
+                {
+                    "type": "hl1",
+                    "content": "Ga maar lekker naar dat feestje"
+                },
+                {
+                    "type": "p",
+                    "content": "Slaapcoach <strong>Irma Leijten</strong> ontwikkelde samen met Psychologie \u00adMagazine de online training ‘Beter slapen’: ‘Fysieke ongemakken hebben vaak een mentale oorzaak en andersom."
+                },
+                {
+                    "type": "p",
+                    "content": "Daarom spelen we in de training met de werking van het brein. Je ontdekt welke hersenspinsels je wakker houden en leert om niet te vechten tegen wakker liggen. En om hulpmiddeltjes en voorwaarden los te laten, zoals “ik moet oordopjes/ mag geen koffie/ kan niet naar dat feestje, anders slaap ik niet”. Dat loslaten is gemakkelijker dan je denkt. Het bespaart je veel energie, die je dan kunt gebruiken om weer voluit te leven.’"
+                },
+                {
+                    "type": "p",
+                    "content": "<strong>// Pagina 84: En trouwens, zo erg is af en toe wakker liggen helemaal niet</strong>",
+                    "metadata": [
+                        "padding-next-paragraph"
+                    ]
+                }
+            ],
+            "format_version": 5
+        }
+    }
+}
+
+
+
+
+{
+	"_embedded": {
+		"user": {
+			"id": "bklein333",
+			"username": "Bram",
+			"first_name": "Bram",
+			"middle_name": null,
+			"last_name": null,
+			"full_name": "Bram",
+			"short_name": "Bram",
+			"_links": {
+				"self": {
+					"href": "https://ws-no-zoom.blendle.com/user/bklein333"
+				},
+				"avatar": {
+					"href": "https://static.blendle.nl/avatar/bklein333/thumbnail_image.jpg?t=1506689729"
+				},
+				"posts": {
+					"href": "https://ws-no-zoom.blendle.com/user/bklein333/posts"
+				},
+				"reads": {
+					"href": "https://ws-no-zoom.blendle.com/user/bklein333/items"
+				},
+				"followers": {
+					"href": "https://ws-no-zoom.blendle.com/user/bklein333/followers"
+				},
+				"follows": {
+					"href": "https://ws-no-zoom.blendle.com/user/bklein333/follows"
+				},
+				"private": {
+					"href": "https://ws-no-zoom.blendle.com/user/bklein333/private"
+				},
+				"premium-subscription": {
+					"href": "https://subscription.blendle.com/user/bklein333/provider_subscription/blendlepremium/latest"
+				},
+				"paper-subscription": {
+					"href": "https://subscription.blendle.com/user/bklein333/provider_subscription/paper/latest"
+				},
+				"large_avatar": {
+					"href": "https://static.blendle.nl/avatar/bklein333/image.jpg?t=1506689729"
+				}
+			},
+			"posts": 10,
+			"followers": 0,
+			"follows": 9,
+			"trending_viewed_at": "2017-08-25T14:07:17+00:00",
+			"facebook_id": null,
+			"twitter_id": null,
+			"twitter_username": null,
+			"country": "NL",
+			"languages": ["nl_NL",
+			"nl_BE",
+			"en_US",
+			"en_GB"],
+			"primary_language": "nl_NL",
+			"time_zone": "Europe/Amsterdam",
+			"text": "",
+			"digest_opt_out": false,
+			"alerts_opt_out": false,
+			"followers_opt_out": false,
+			"new_edition_opt_out": true,
+			"read_later_opt_out": false,
+			"tips_opt_out": false,
+			"friend_signup_opt_out": false,
+			"weekly_digest_opt_out": false,
+			"magazine_digest_opt_out": false,
+			"marketing_opt_out": false,
+			"announcements_opt_out": false,
+			"survey_opt_out": false,
+			"trial_upsell_opt_out": false,
+			"ad_retargeting_opt_out": false,
+			"publisher_hashed_email_share_opt_out": false,
+			"mixpanel_opt_out": false,
+			"master_opt_out": false,
+			"preferences": {
+				"last_bank": "0721",
+				"did_onboarding": "true",
+				"last_payment_method": "ideal",
+				"did_premium_onboarding": "true",
+				"hide_acquire_issue_tooltip": "1",
+				"did_dismiss_premium_launch_dialog": "true",
+				"did_dismiss_non_premium_timeline_dialog": "true"
+			},
+			"email": "b.klein333@gmail.com",
+			"reads": 41,
+			"has_password": true,
+			"pins": 1,
+			"orders": 2,
+			"freeloader": false,
+			"verified": false,
+			"email_confirmed": true,
+			"currency": "EUR",
+			"balance": "7.18",
+			"automatic_topup_on_low_balance": true,
+			"providers_opt_in": false,
+			"tracking_uid": "671df027-197c-480f-b797-b16481a3b268",
+			"uuid": "671df027-197c-480f-b797-b16481a3b268",
+			"active_subscriptions": ["filosofiemagazine",
+			"psychologie"]
+		}
+	},
+	"refresh_token": "nkPhXsoTdGtHRHhn42pHep6E1frSZaem",
+	"jwt": "eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiJ9.eyJleHAiOjE1MDY4NzAxMzcsInN1YiI6ImxvZ2luIiwidXNlcl91dWlkIjoiNjcxZGYwMjctMTk3Yy00ODBmLWI3OTctYjE2NDgxYTNiMjY4IiwidXNlcl9pZCI6ImJrbGVpbjMzMyJ9.aFNybUQucyOOEbIkkPukcQuDlUXoYNuc92ERH-QhlbtYf5JMjvysFImLwvKiG2CLqtQ8r3ra2PIrT8dGVL67fA"
+}

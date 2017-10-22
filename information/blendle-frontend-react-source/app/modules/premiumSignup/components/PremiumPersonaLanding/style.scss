@@ -1,0 +1,29 @@
+exports = module.exports = require("./../../../../../../../node_modules/css-loader/lib/css-base.js")();
+// imports
+
+
+// module
+exports.push([module.id, ".premiumPersonaLanding-3iAZc{min-height:calc(100vh - 50px);background:#fff;width:100%;display:flex;flex-direction:column;align-items:center}@media screen and (min-width:1025px){.premiumPersonaLanding-3iAZc{align-items:center;min-height:calc(100vh - 62px);flex-direction:row}}.content-2kiOE{display:flex;flex-direction:column;align-items:center;position:relative;max-width:450px;flex:1;padding:0 25px}@media screen and (min-width:1025px){.content-2kiOE{align-items:flex-start;margin:0 0 0 10%;padding:0 0 10%;min-width:600px;max-width:600px}}.signupForm-23xEl{max-width:400px;width:100%}@media screen and (min-width:1025px){.signupForm-23xEl{max-width:300px}}.title-3DQZ6{font-family:GT-Walsheim,sans-serif;color:#000;font-size:28px}@media screen and (min-width:1025px){.title-3DQZ6{font-size:35px}}.subtitle-1C1Mh{font-size:18px;margin-top:1em;margin-bottom:.5em;font-weight:600;align-self:flex-start}@media screen and (min-width:1025px){.subtitle-1C1Mh{margin-top:1.5em;margin-bottom:1em}}.disclaimer-3ceyp{display:block;margin-top:15px;text-align:center;font-size:10px}@media screen and (min-width:1025px){.disclaimer-3ceyp{position:fixed;left:15px;bottom:15px;text-align:left}}.stopsAutomatically-1Thyy{display:block;text-align:center;margin-top:5px}.coversContainer-zSk9N{height:140px;width:100%;max-width:450px;align-self:center;background-size:cover;background-position:bottom;background-repeat:no-repeat}@media screen and (min-width:1025px){.coversContainer-zSk9N{height:calc(100vh - 62px);max-width:none;background-size:auto 100%;background-position:0 100%;order:1;flex:1}}.default-3tJX5{background-image:url(\"https://assets.blendleimg.com/img/backgrounds/personas/default-mobile.jpg?auto=format\")}@media screen and (min-width:1025px){.default-3tJX5{background-image:url(\"https://assets.blendleimg.com/img/backgrounds/personas/default.jpg?auto=format\")}}.maria-3g2Zg{background-image:url(\"https://assets.blendleimg.com/img/backgrounds/personas/maria-mobile.jpg?auto=format\")}@media screen and (min-width:1025px){.maria-3g2Zg{background-image:url(\"https://assets.blendleimg.com/img/backgrounds/personas/maria.jpg?auto=format\")}}.pieter-2amxl{background-image:url(\"https://assets.blendleimg.com/img/backgrounds/personas/pieter-mobile.jpg?auto=format\")}@media screen and (min-width:1025px){.pieter-2amxl{background-image:url(\"https://assets.blendleimg.com/img/backgrounds/personas/pieter.jpg?auto=format\")}}.mark-2rfhZ{background-image:url(\"https://assets.blendleimg.com/img/backgrounds/personas/mark-mobile.png?auto=format\")}@media screen and (min-width:1025px){.mark-2rfhZ{background-image:url(\"https://assets.blendleimg.com/img/backgrounds/personas/mark.png?auto=format\")}}", ""]);
+
+// exports
+exports.locals = {
+	"premiumPersonaLanding": "premiumPersonaLanding-3iAZc",
+	"content": "content-2kiOE",
+	"signupForm": "signupForm-23xEl",
+	"title": "title-3DQZ6",
+	"subtitle": "subtitle-1C1Mh",
+	"disclaimer": "disclaimer-3ceyp",
+	"stopsAutomatically": "stopsAutomatically-1Thyy",
+	"coversContainer": "coversContainer-zSk9N",
+	"default": "default-3tJX5",
+	"maria": "maria-3g2Zg",
+	"pieter": "pieter-2amxl",
+	"mark": "mark-2rfhZ"
+};
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/css-loader?modules&importLoaders=1&localIdentName=[local]-[hash:base64:5]!./~/sass-loader?outputStyle=compressed&includePaths[]=/home/jenkins/workspace/e_blendle-web-client_master-OGUROC6EFB77SMY4JEEDJFQNHMRBT3ZLBPPHNIGXKGWDHSUDQKLQ/src/scss!./src/js/app/modules/premiumSignup/components/PremiumPersonaLanding/style.scss
+// module id = 2253
+// module chunks = 0

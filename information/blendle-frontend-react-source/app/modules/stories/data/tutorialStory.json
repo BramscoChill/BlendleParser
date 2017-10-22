@@ -1,0 +1,22 @@
+module.exports = {
+	"_links": {
+		"b:cover": {
+			"href": "https://publication.blendleimg.com/images/story_icon/tutorial@2x.png"
+		}
+	},
+	"item_uids": [
+		"tutorial_intro",
+		"tutorial_tap",
+		"tutorial_pin"
+	],
+	"type": "tutorial",
+	"id": "tutorial",
+	"label": "stories.tutorial.label"
+};
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./src/js/app/modules/stories/data/tutorialStory.json
+// module id = 1054
+// module chunks = 26

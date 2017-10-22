@@ -1,0 +1,19 @@
+exports = module.exports = require("./../../../../../../../node_modules/css-loader/lib/css-base.js")();
+// imports
+
+
+// module
+exports.push([module.id, ".container-3PHF-{display:flex;margin-top:45px;margin-bottom:45px}@media screen and (min-width:600px){.container-3PHF-{margin-left:5%;margin-right:5%}}.video-2KJpR{margin:0 auto}", ""]);
+
+// exports
+exports.locals = {
+	"container": "container-3PHF-",
+	"video": "video-2KJpR"
+};
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/css-loader?modules&importLoaders=1&localIdentName=[local]-[hash:base64:5]!./~/sass-loader?outputStyle=compressed&includePaths[]=/home/jenkins/workspace/e_blendle-web-client_master-OGUROC6EFB77SMY4JEEDJFQNHMRBT3ZLBPPHNIGXKGWDHSUDQKLQ/src/scss!./src/js/app/modules/item/components/YoutubeVideo/style.scss
+// module id = 2221
+// module chunks = 1

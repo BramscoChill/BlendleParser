@@ -1,0 +1,18 @@
+exports = module.exports = require("./../../../../../../node_modules/css-loader/lib/css-base.js")();
+// imports
+
+
+// module
+exports.push([module.id, ".manifestDropdownWrapper-1AF2W{position:absolute;right:0;top:0}", ""]);
+
+// exports
+exports.locals = {
+	"manifestDropdownWrapper": "manifestDropdownWrapper-1AF2W"
+};
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/css-loader?modules&importLoaders=1&localIdentName=[local]-[hash:base64:5]!./~/sass-loader?outputStyle=compressed&includePaths[]=/home/jenkins/workspace/e_blendle-web-client_master-OGUROC6EFB77SMY4JEEDJFQNHMRBT3ZLBPPHNIGXKGWDHSUDQKLQ/src/scss!./src/js/app/containers/ManifestContainer/ManifestDropdownWrapper/style.scss
+// module id = 1468
+// module chunks = 2 4 5 6

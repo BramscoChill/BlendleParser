@@ -1,0 +1,25 @@
+exports = module.exports = require("./../../../../../../../node_modules/css-loader/lib/css-base.js")();
+// imports
+
+
+// module
+exports.push([module.id, ".upgradeContainer-2V89j{position:fixed;z-index:20;width:100%;height:0;bottom:0;left:0;text-align:center}.l-mobile .upgradeContainer-2V89j{height:auto;bottom:0;top:unset}.bulletin-k3OI4{background:#3e455f;max-width:100%;display:inline-flex;padding:10px;color:#fff;border-radius:0 0 2px 2px;align-items:center;opacity:0;transform:translateY(100%);transition:transform .5s cubic-bezier(.71,.01,.04,1.39),opacity .5s cubic-bezier(.71,.01,.04,1.39)}.l-mobile .bulletin-k3OI4{position:relative;flex-direction:column;padding:15px;animation-name:bulletin-mobile-376sE}.paused-1fonV{animation-play-state:paused}.bulletin-k3OI4 *{flex-grow:0;flex-shrink:0}.isVisible-XiGO7{transform:translateY(calc(-100% - 15px));opacity:1}.l-mobile .isVisible-XiGO7{transform:translateY(0)!important}.message-2JJJU{flex-shrink:1;padding:0 10px;margin-right:10px;font-weight:500}.l-mobile .message-2JJJU{padding:0;margin-right:0;margin-bottom:10px}.closeButton-iltsM{cursor:pointer;color:hsla(0,0%,100%,.3);transition:color .2s ease-in-out}.l-mobile .closeButton-iltsM{align-self:flex-end;order:-1}.closeButton-iltsM:hover{color:#fff}.closeIcon-HClFd{height:12px}", ""]);
+
+// exports
+exports.locals = {
+	"upgradeContainer": "upgradeContainer-2V89j",
+	"bulletin": "bulletin-k3OI4",
+	"bulletin-mobile": "bulletin-mobile-376sE",
+	"paused": "paused-1fonV",
+	"isVisible": "isVisible-XiGO7",
+	"message": "message-2JJJU",
+	"closeButton": "closeButton-iltsM",
+	"closeIcon": "closeIcon-HClFd"
+};
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/css-loader?modules&importLoaders=1&localIdentName=[local]-[hash:base64:5]!./~/sass-loader?outputStyle=compressed&includePaths[]=/home/jenkins/workspace/e_blendle-web-client_master-OGUROC6EFB77SMY4JEEDJFQNHMRBT3ZLBPPHNIGXKGWDHSUDQKLQ/src/scss!./src/js/app/modules/timeline/components/UpgradeBulletin/style.scss
+// module id = 2298
+// module chunks = 16

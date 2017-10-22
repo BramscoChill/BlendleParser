@@ -1,0 +1,18 @@
+exports = module.exports = require("./../../../../../../../node_modules/css-loader/lib/css-base.js")();
+// imports
+
+
+// module
+exports.push([module.id, ".recommendButton-24IQo{position:relative;margin-bottom:40px;text-align:center}@media screen and (min-width:600px){.recommendButton-24IQo{text-align:left;margin-bottom:0}}", ""]);
+
+// exports
+exports.locals = {
+	"recommendButton": "recommendButton-24IQo"
+};
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/css-loader?modules&importLoaders=1&localIdentName=[local]-[hash:base64:5]!./~/sass-loader?outputStyle=compressed&includePaths[]=/home/jenkins/workspace/e_blendle-web-client_master-OGUROC6EFB77SMY4JEEDJFQNHMRBT3ZLBPPHNIGXKGWDHSUDQKLQ/src/scss!./src/js/app/modules/item/components/RecommendButton/style.scss
+// module id = 2201
+// module chunks = 1

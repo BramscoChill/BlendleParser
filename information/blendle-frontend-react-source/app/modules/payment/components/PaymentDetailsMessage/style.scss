@@ -1,0 +1,20 @@
+exports = module.exports = require("./../../../../../../../node_modules/css-loader/lib/css-base.js")();
+// imports
+
+
+// module
+exports.push([module.id, ".paymentDetails-3XyVk{display:flex;flex-direction:row;align-items:center;margin-top:12px}.icon-hjCC4{flex-shrink:0;margin-top:-5px}.message-546aK{margin:0 0 0 10px;color:#948784;font-size:12px}", ""]);
+
+// exports
+exports.locals = {
+	"paymentDetails": "paymentDetails-3XyVk",
+	"icon": "icon-hjCC4",
+	"message": "message-546aK"
+};
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/css-loader?modules&importLoaders=1&localIdentName=[local]-[hash:base64:5]!./~/sass-loader?outputStyle=compressed&includePaths[]=/home/jenkins/workspace/e_blendle-web-client_master-OGUROC6EFB77SMY4JEEDJFQNHMRBT3ZLBPPHNIGXKGWDHSUDQKLQ/src/scss!./src/js/app/modules/payment/components/PaymentDetailsMessage/style.scss
+// module id = 2226
+// module chunks = 19

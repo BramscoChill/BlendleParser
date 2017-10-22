@@ -1,0 +1,23 @@
+exports = module.exports = require("./../../../../../../../../node_modules/css-loader/lib/css-base.js")();
+// imports
+
+
+// module
+exports.push([module.id, ".itemToSpeechControls-3B887{position:absolute;display:flex;background:#fff;align-items:center;padding:5px 10px;top:55px;left:0;width:100%;max-width:none;box-shadow:0 3px 5px rgba(0,0,0,.1)}@media screen and (min-width:850px){.itemToSpeechControls-3B887{width:275px;position:relative;top:0;box-shadow:none}}.toggleButton-1p0Au{color:#948784;padding:0}.toggleButton-1p0Au svg{position:relative;left:-5px}@media screen and (min-width:600px){.toggleButton-1p0Au:hover{color:#333}}.time-2OiqW{font-size:12px;color:#948784;margin-right:10px;min-width:70px}.seekbar-3LwwY{flex:1}.slider--4Z5z{width:100%}.isLoading-2J8_x{pointer-events:none;opacity:.4}", ""]);
+
+// exports
+exports.locals = {
+	"itemToSpeechControls": "itemToSpeechControls-3B887",
+	"toggleButton": "toggleButton-1p0Au",
+	"time": "time-2OiqW",
+	"seekbar": "seekbar-3LwwY",
+	"slider": "slider--4Z5z",
+	"isLoading": "isLoading-2J8_x"
+};
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/css-loader?modules&importLoaders=1&localIdentName=[local]-[hash:base64:5]!./~/sass-loader?outputStyle=compressed&includePaths[]=/home/jenkins/workspace/e_blendle-web-client_master-OGUROC6EFB77SMY4JEEDJFQNHMRBT3ZLBPPHNIGXKGWDHSUDQKLQ/src/scss!./src/js/app/modules/item/components/ItemToSpeech/Controls/style.scss
+// module id = 2188
+// module chunks = 1

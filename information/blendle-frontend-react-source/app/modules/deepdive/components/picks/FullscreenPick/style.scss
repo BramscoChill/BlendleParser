@@ -1,0 +1,27 @@
+exports = module.exports = require("./../../../../../../../../node_modules/css-loader/lib/css-base.js")();
+// imports
+
+
+// module
+exports.push([module.id, ".pick-ZIxc3{margin-bottom:100px}@media (min-width:600px){.pick-ZIxc3{margin-top:100px}}.link-2DA7I:active,.link-2DA7I:hover,.link-2DA7I:link,.link-2DA7I:visited{text-decoration:none;color:inherit}.link-2DA7I:hover{text-decoration:underline;text-decoration-color:inherit}.numberContainer-3gosF{position:relative;text-align:center;margin-bottom:-20px;z-index:1}.contentContainer-3R3hh{width:100%;background:#ca20ff;padding:25px 15px 50px}@media (min-width:600px){.contentContainer-3R3hh{padding:25px 15px 75px}}.imageContainer-3g7zf{position:relative;padding:0 10px}.image-1EBg6{position:relative;width:100%;max-width:620px;margin:0 auto}.imageBackground-78wir{position:absolute;display:block;width:100%;height:50%;bottom:0;left:0;background:#ca20ff}@media (min-width:600px){.imageBackground-78wir{height:70%}}.title-JIKbX{font-family:GT-Walsheim,sans-serif;font-weight:700;font-size:35px;line-height:1;color:#fff;text-shadow:-2px 2px 0 #ff3e8e;margin-bottom:10px}@media (min-width:600px){.title-JIKbX{max-width:820px;text-align:center;margin:25px auto;font-size:60px;text-shadow:-3px 3px 0 #ff3e8e}}.introWrapper-2KfFj{max-width:620px;margin:0 auto}.intro-1WxPr{font-family:GT-Walsheim,sans-serif;font-size:23px;color:#fff}@media (min-width:600px){.intro-1WxPr{max-width:540px}}", ""]);
+
+// exports
+exports.locals = {
+	"pick": "pick-ZIxc3",
+	"link": "link-2DA7I",
+	"numberContainer": "numberContainer-3gosF",
+	"contentContainer": "contentContainer-3R3hh",
+	"imageContainer": "imageContainer-3g7zf",
+	"image": "image-1EBg6",
+	"imageBackground": "imageBackground-78wir",
+	"title": "title-JIKbX",
+	"introWrapper": "introWrapper-2KfFj",
+	"intro": "intro-1WxPr"
+};
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/css-loader?modules&importLoaders=1&localIdentName=[local]-[hash:base64:5]!./~/sass-loader?outputStyle=compressed&includePaths[]=/home/jenkins/workspace/e_blendle-web-client_master-OGUROC6EFB77SMY4JEEDJFQNHMRBT3ZLBPPHNIGXKGWDHSUDQKLQ/src/scss!./src/js/app/modules/deepdive/components/picks/FullscreenPick/style.scss
+// module id = 2169
+// module chunks = 10

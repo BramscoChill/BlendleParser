@@ -1,0 +1,28 @@
+exports = module.exports = require("./../../../../../../../../node_modules/css-loader/lib/css-base.js")();
+// imports
+
+
+// module
+exports.push([module.id, "@media screen and (max-width:600px){.about-1usSY{padding-top:70px}}.sectionTitle-3cXRZ{margin-bottom:70px;font-size:3.28571em;text-align:center;opacity:0}@media screen and (max-width:600px){.sectionTitle-3cXRZ{font-size:2.57143em}}.aboutCopy-1Tbdt{display:inline-flex;flex-direction:column;justify-content:center;width:30%;min-height:450px}@media screen and (max-width:1025px){.aboutCopy-1Tbdt{min-height:400px;width:40%}}@media screen and (max-width:768px){.aboutCopy-1Tbdt{width:100%;max-width:400px;min-height:auto}}.secondAboutSection-HW1-B{padding-top:100px;height:650px;position:relative}@media screen and (max-width:768px){.secondAboutSection-HW1-B{padding:150px 0 100px;height:auto}}@media screen and (max-width:600px){.secondAboutSection-HW1-B .text-1uAcB,.secondAboutSection-HW1-B .title-1T3Li{max-width:75%}}.secondAboutSection-HW1-B .aboutCopy-1Tbdt{vertical-align:top;padding:80px 0 0 calc(50% + 100px);width:100%}@media screen and (max-width:1025px){.secondAboutSection-HW1-B .aboutCopy-1Tbdt{padding:80px 0 0 calc(50% + 50px)}}@media screen and (max-width:768px){.secondAboutSection-HW1-B .aboutCopy-1Tbdt{padding:0;width:100%}}@media screen and (max-width:600px){.secondAboutSection-HW1-B .aboutCopy-1Tbdt{padding-right:30px}}.title-1T3Li{font-weight:700;opacity:0;animation-delay:.3s}@media screen and (max-width:600px){.title-1T3Li{font-size:2.57143em!important}}.text-1uAcB{font-family:GT-Walsheim,sans-serif;font-size:17px;line-height:1.4em;font-weight:400;margin-bottom:1em;opacity:0;animation-delay:.5s}.text-1uAcB:last-of-type{margin-bottom:2.28571em}.cta-2Wc00{opacity:0;animation-delay:.7s}.landingPhoto-ISS2Q{position:relative;height:450px;margin-bottom:70px;position:absolute;right:-80px;opacity:0;animation-delay:.9s}.landingPhoto-ISS2Q:before{display:block;content:\"\";width:100%;padding-top:66.66667%}.landingPhoto-ISS2Q>img{position:absolute;top:0;left:0;right:0;bottom:0}@media screen and (max-width:1025px){.landingPhoto-ISS2Q{width:auto;height:400px;right:-160px}}@media screen and (max-width:768px){.landingPhoto-ISS2Q{position:relative;right:auto;height:auto;width:120%;width:calc(100% + 100px);max-width:calc(100% + 100px);margin-left:-50px}}.mobileTimeline-3fdIL{display:inline-block;position:absolute;left:calc(50vw - 550px + 100px);vertical-align:bottom;background:url(\"https://assets.blendleimg.com/img/backgrounds/timeline_mobile.jpg?auto=format\") no-repeat;background-size:265px auto;background-position:33px 90px;transition:background-position 30s}.mobileTimeline-3fdIL img{width:330px;max-width:100%;margin:0 auto}@media screen and (max-width:1025px){.mobileTimeline-3fdIL{left:80px}}@media screen and (max-width:768px){.mobileTimeline-3fdIL{position:absolute;width:330px;top:50px;left:auto;right:-150px;transform:rotate(-15deg)}}@media screen and (max-width:600px){.mobileTimeline-3fdIL{right:-250px}}@media only screen and (-webkit-min-device-pixel-ratio:2),only screen and (min--moz-device-pixel-ratio:2),only screen and (min-device-pixel-ratio:2),only screen and (min-resolution:2dppx),only screen and (min-resolution:192dpi){.mobileTimeline-3fdIL{background-image:url(\"https://assets.blendleimg.com/img/backgrounds/timeline_mobile@2x.jpg?auto=format\")}}.scrollTimeline-3uGKo{background-position:33px -320px}@media screen and (max-width:768px){.scrollTimeline-3uGKo{background-position:33px 90px}}.storeLink-3ouqM{width:144px;height:44px;display:inline-block;margin-right:10px}@media screen and (max-width:600px){.storeLink-3ouqM,.storeLink-3ouqM svg{width:120px;height:auto}}", ""]);
+
+// exports
+exports.locals = {
+	"about": "about-1usSY",
+	"sectionTitle": "sectionTitle-3cXRZ",
+	"aboutCopy": "aboutCopy-1Tbdt",
+	"secondAboutSection": "secondAboutSection-HW1-B",
+	"title": "title-1T3Li",
+	"text": "text-1uAcB",
+	"cta": "cta-2Wc00",
+	"landingPhoto": "landingPhoto-ISS2Q",
+	"mobileTimeline": "mobileTimeline-3fdIL",
+	"scrollTimeline": "scrollTimeline-3uGKo",
+	"storeLink": "storeLink-3ouqM"
+};
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/css-loader?modules&importLoaders=1&localIdentName=[local]-[hash:base64:5]!./~/sass-loader?outputStyle=compressed&includePaths[]=/home/jenkins/workspace/e_blendle-web-client_master-OGUROC6EFB77SMY4JEEDJFQNHMRBT3ZLBPPHNIGXKGWDHSUDQKLQ/src/scss!./src/js/app/modules/premiumSignup/components/PremiumLanding/LandingAbout/style.scss
+// module id = 2244
+// module chunks = 0

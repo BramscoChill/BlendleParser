@@ -1,0 +1,23 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import { pure } from 'recompose';
+
+const ArrowTopRight = ({ fill = 'currentColor', ...props }) => (
+  <svg viewBox="0 0 24 21" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <path
+      fill={fill}
+      d="M13.6562596,10.6126792 C12.6173134,10.4866915 9.78023724,10.3948238 6.24185848,12.3580414 C1.75826468,14.845698 0.0218115316,20.0000001 0.0218115316,20.0000001 C0.0218115316,20.0000001 -0.543087436,13.8180642 4.07678684,9.5375355 C7.9463622,5.95219379 12.3333653,5.06910729 13.6562596,4.87683534 L13.6562596,0.442543732 C13.6562596,0.00412214551 13.926954,-0.134221429 14.274097,0.144149571 L23.1587499,7.26867647 C23.4999717,7.54229941 23.5058925,7.98118217 23.1587499,8.25955317 L14.274097,15.3840801 C13.9328748,15.657703 13.6562596,15.5254205 13.6562596,15.0856859 L13.6562596,10.6126792 Z"
+    />
+  </svg>
+);
+
+ArrowTopRight.propTypes = {
+  fill: PropTypes.string,
+};
+
+export default pure(ArrowTopRight);
+
+
+
+// WEBPACK FOOTER //
+// ./src/js/app/components/icons/ArrowTopRight.js

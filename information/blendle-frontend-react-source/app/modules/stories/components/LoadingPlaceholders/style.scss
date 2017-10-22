@@ -1,0 +1,34 @@
+exports = module.exports = require("./../../../../../../../node_modules/css-loader/lib/css-base.js")();
+// imports
+
+
+// module
+exports.push([module.id, ".placeholdersContainer-NIQ8b{position:absolute;left:15px;top:0;height:100%;display:flex;align-items:center;pointer-events:none}.isHidden-3XuZj{display:none}", ""]);
+
+// exports
+exports.locals = {
+	"placeholdersContainer": "placeholdersContainer-NIQ8b",
+	"isHidden": "isHidden-3XuZj"
+};
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/css-loader?modules&importLoaders=1&localIdentName=[local]-[hash:base64:5]!./~/sass-loader?outputStyle=compressed&includePaths[]=/home/jenkins/workspace/e_blendle-web-client_master-OGUROC6EFB77SMY4JEEDJFQNHMRBT3ZLBPPHNIGXKGWDHSUDQKLQ/src/scss!./src/js/app/modules/stories/components/LoadingPlaceholders/style.scss
+// module id = 2277
+// module chunks = 16ccept("!!./../../../../../../../node_modules/css-loader/index.js?modules&importLoaders=1&localIdentName=[local]-[hash:base64:5]!./../../../../../../../node_modules/sass-loader/index.js?outputStyle=compressed&includePaths[]=/home/jenkins/workspace/e_blendle-web-client_master-OGUROC6EFB77SMY4JEEDJFQNHMRBT3ZLBPPHNIGXKGWDHSUDQKLQ/src/scss!./style.scss", function() {
+			var newContent = require("!!./../../../../../../../node_modules/css-loader/index.js?modules&importLoaders=1&localIdentName=[local]-[hash:base64:5]!./../../../../../../../node_modules/sass-loader/index.js?outputStyle=compressed&includePaths[]=/home/jenkins/workspace/e_blendle-web-client_master-OGUROC6EFB77SMY4JEEDJFQNHMRBT3ZLBPPHNIGXKGWDHSUDQKLQ/src/scss!./style.scss");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./src/js/app/modules/stories/components/LoadingPlaceholders/style.scss
+// module id = 2421
+// module chunks = 16

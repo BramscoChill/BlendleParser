@@ -1,0 +1,35 @@
+exports = module.exports = require("./../../../../../../../../node_modules/css-loader/lib/css-base.js")();
+// imports
+
+
+// module
+exports.push([module.id, ".storyTilePlaceholder-YDGpz{display:inline-block;width:60px;height:60px;top:-5px;opacity:1;position:relative;border-radius:5px;background:#f2f2f2;margin-right:10px;animation:pulse-7JmH5 1s ease-out infinite}.swipeOut-snoI2{opacity:1;animation:swipeOut-snoI2 .2s ease-out forwards}.fadeOut-1DFbe{transition:opacity .2s ease-out;opacity:0;animation:none}@keyframes pulse-7JmH5{20%{opacity:1}40%{opacity:.3}60%{opacity:.3}80%{opacity:1}to{opacity:1}}@keyframes swipeOut-snoI2{0%{opacity:1;transform:translateY(0)}to{opacity:0;transform:translateY(-10px)}}", ""]);
+
+// exports
+exports.locals = {
+	"storyTilePlaceholder": "storyTilePlaceholder-YDGpz",
+	"pulse": "pulse-7JmH5",
+	"swipeOut": "swipeOut-snoI2",
+	"fadeOut": "fadeOut-1DFbe"
+};
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/css-loader?modules&importLoaders=1&localIdentName=[local]-[hash:base64:5]!./~/sass-loader?outputStyle=compressed&includePaths[]=/home/jenkins/workspace/e_blendle-web-client_master-OGUROC6EFB77SMY4JEEDJFQNHMRBT3ZLBPPHNIGXKGWDHSUDQKLQ/src/scss!./src/js/app/modules/stories/components/LoadingPlaceholders/StoryTilePlaceholder/style.scss
+// module id = 2276
+// module chunks = 16dules&importLoaders=1&localIdentName=[local]-[hash:base64:5]!./../../../../../../../../node_modules/sass-loader/index.js?outputStyle=compressed&includePaths[]=/home/jenkins/workspace/e_blendle-web-client_master-OGUROC6EFB77SMY4JEEDJFQNHMRBT3ZLBPPHNIGXKGWDHSUDQKLQ/src/scss!./style.scss");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./src/js/app/modules/stories/components/LoadingPlaceholders/StoryTilePlaceholder/style.scss
+// module id = 2420
+// module chunks = 16

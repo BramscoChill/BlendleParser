@@ -1,0 +1,19 @@
+exports = module.exports = require("./../../../../../../../node_modules/css-loader/lib/css-base.js")();
+// imports
+
+
+// module
+exports.push([module.id, ".container-1qAgh{font-family:GT-Walsheim,sans-serif;font-size:16px;line-height:1.3;text-align:center}.container-1qAgh a{display:block}@media screen and (min-width:600px){.container-1qAgh a{display:inline-block}}@media only screen and (min-width:600px){.container-1qAgh{padding:10px 0 0;margin-top:50px;border-top:1px solid #eee;text-align:left}}.withSharingButtonHeart-3uXYt{margin-top:25px;border-top:none;font-size:1em;text-align:center}.withSharingButtonHeart-3uXYt strong{font-weight:400}", ""]);
+
+// exports
+exports.locals = {
+	"container": "container-1qAgh",
+	"withSharingButtonHeart": "withSharingButtonHeart-3uXYt"
+};
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/css-loader?modules&importLoaders=1&localIdentName=[local]-[hash:base64:5]!./~/sass-loader?outputStyle=compressed&includePaths[]=/home/jenkins/workspace/e_blendle-web-client_master-OGUROC6EFB77SMY4JEEDJFQNHMRBT3ZLBPPHNIGXKGWDHSUDQKLQ/src/scss!./src/js/app/modules/item/components/ProviderSubscription/style.scss
+// module id = 2198
+// module chunks = 1

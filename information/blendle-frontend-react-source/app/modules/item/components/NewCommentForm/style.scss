@@ -1,0 +1,25 @@
+exports = module.exports = require("./../../../../../../../node_modules/css-loader/lib/css-base.js")();
+// imports
+
+
+// module
+exports.push([module.id, ".form-oTaVY{display:flex;flex-direction:column;position:absolute;top:-140px;left:calc(50% - 150px);width:300px;height:165px;background:#fff;box-shadow:0 2px 4px 0 rgba(0,0,0,.1);border-radius:3px;font-family:GT-Walsheim,sans-serif;opacity:0;animation:fade-in-oRoct .3s ease-in-out forwards .7s}.label-1vSpu{width:100%;margin:0}.textArea-L-mOi{border:none;width:100%;font-family:GT-Walsheim,sans-serif;padding:16px}.textArea-L-mOi:focus{border:none;box-shadow:none}.footer-3dbel{padding:0 16px 16px;display:flex;justify-content:space-between;align-items:flex-end}.button-1Vh2P{font-family:GT-Walsheim,sans-serif}.charLimit-3i_cy{color:#ccc}.arrow-6pDxe{position:absolute;bottom:-10px;z-index:5;width:20px;height:20px;transform:rotate(45deg);left:calc(50% - 10px);background:#fff;box-shadow:2px 2px 4px 0 rgba(0,0,0,.1);border-radius:0 0 3px}@keyframes fade-in-oRoct{0%{opacity:0;transform:scale(0)}20%{opacity:1}85%{transform:scale(1.1)}to{opacity:1;transform:scale(1)}}", ""]);
+
+// exports
+exports.locals = {
+	"form": "form-oTaVY",
+	"fade-in": "fade-in-oRoct",
+	"label": "label-1vSpu",
+	"textArea": "textArea-L-mOi",
+	"footer": "footer-3dbel",
+	"button": "button-1Vh2P",
+	"charLimit": "charLimit-3i_cy",
+	"arrow": "arrow-6pDxe"
+};
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/css-loader?modules&importLoaders=1&localIdentName=[local]-[hash:base64:5]!./~/sass-loader?outputStyle=compressed&includePaths[]=/home/jenkins/workspace/e_blendle-web-client_master-OGUROC6EFB77SMY4JEEDJFQNHMRBT3ZLBPPHNIGXKGWDHSUDQKLQ/src/scss!./src/js/app/modules/item/components/NewCommentForm/style.scss
+// module id = 2191
+// module chunks = 1

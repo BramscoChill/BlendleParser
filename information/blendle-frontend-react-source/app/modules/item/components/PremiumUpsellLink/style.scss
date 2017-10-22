@@ -1,0 +1,19 @@
+exports = module.exports = require("./../../../../../../../node_modules/css-loader/lib/css-base.js")();
+// imports
+
+
+// module
+exports.push([module.id, ".link-PyixM{position:absolute;height:100%;display:flex;align-items:center;bottom:2px;right:55px;font-family:GT-Walsheim,sans-serif;font-weight:500;color:#ff1060}@media (max-width:500px){.link-PyixM{display:none}}.delay-1sa8S{visibility:hidden;opacity:0;animation:delay-1sa8S 20s forwards}@keyframes delay-1sa8S{0%{visibility:hidden;opacity:0}90%{visibility:visible;opacity:0}to{visibility:visible;opacity:1}}", ""]);
+
+// exports
+exports.locals = {
+	"link": "link-PyixM",
+	"delay": "delay-1sa8S"
+};
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./~/css-loader?modules&importLoaders=1&localIdentName=[local]-[hash:base64:5]!./~/sass-loader?outputStyle=compressed&includePaths[]=/home/jenkins/workspace/e_blendle-web-client_master-OGUROC6EFB77SMY4JEEDJFQNHMRBT3ZLBPPHNIGXKGWDHSUDQKLQ/src/scss!./src/js/app/modules/item/components/PremiumUpsellLink/style.scss
+// module id = 2196
+// module chunks = 1
