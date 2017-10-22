@@ -7,3 +7,7 @@ Get your magazines from blendle.com and loose articles and convert them to PDF. 
 * Select articles from all the loose you bought and convert them to a PDF
 
 It uses itext7 for the PDF generation
+
+Screenshot:
+![alt text](https://raw.githubusercontent.com/BramscoChill/BlendleParser/master/screenshots/mainscreen.png)
+
