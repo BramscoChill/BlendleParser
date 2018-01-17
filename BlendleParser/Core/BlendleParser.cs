@@ -131,9 +131,14 @@ namespace BlendleParser.Core
                     {
                         result.Message = "UserBaseProfile fetching failled (invalid username pwd?): " + baseProfileResult.Message;
                         WriteToLog(result.Message, ref result);
+                        result.Succeeded = false;
 
                         Configuration.Instance.UserBaseProfile = new UserBaseProfile();
                         Configuration.Instance.Save();
+                    }
+                    else
+                    {
+                        result.Succeeded = true;
                     }
                 }
                 else
@@ -191,7 +196,7 @@ namespace BlendleParser.Core
             string fullPath = AllYearsMagazine.GetFullPath(magazine);
 
             AllYearsMagazine allYearsMagazine = null;
-            if (forceReDownload || File.Exists(fullPath) == false)
+            //if (forceReDownload || File.Exists(fullPath) == false)
             {
                 //get the years file if not exists
                 Result<AllYearsMagazine> allYearsMagazineResult = client.GetAllYearsMagazine(magazine);
@@ -201,10 +206,10 @@ namespace BlendleParser.Core
                     GeneralUtils.Save<AllYearsMagazine>(allYearsMagazine, fullPath);
                 }
             }
-            else
-            {
-                allYearsMagazine = GeneralUtils.Load<AllYearsMagazine>(fullPath);
-            }
+//            else
+//            {
+//                allYearsMagazine = GeneralUtils.Load<AllYearsMagazine>(fullPath);
+//            }
 
             //validates al lthe years
             if (allYearsMagazine != null && allYearsMagazine.IsValid())
@@ -257,7 +262,7 @@ namespace BlendleParser.Core
             string fullPath = AllMagazinesInYear.GetFullPath(magazine, year);
 
             AllMagazinesInYear allMagazinesInYear = null;
-            if (forceReDownload || File.Exists(fullPath) == false)
+            //if (forceReDownload || File.Exists(fullPath) == false)
             {
                 Result<AllMagazinesInYear> allMagazinesInYearResult = client.GetAllMagazinesInYear(magazine, year);
                 if (allMagazinesInYearResult.Succeeded && allMagazinesInYearResult.Data != null)
@@ -267,10 +272,10 @@ namespace BlendleParser.Core
                     Console.WriteLine($"downloaded months file magazine:'{magazine}' - year:'{year}'");
                 }
             }
-            else
-            {
-                allMagazinesInYear = GeneralUtils.Load<AllMagazinesInYear>(fullPath);
-            }
+//            else
+//            {
+//                allMagazinesInYear = GeneralUtils.Load<AllMagazinesInYear>(fullPath);
+//            }
 
             if (allMagazinesInYear != null && allMagazinesInYear.IsValid())
             {
@@ -701,7 +706,7 @@ namespace BlendleParser.Core
             result.Data = Transaction.GetAllTransactions();
             result.Succeeded = true;
 
-            WriteToLog($"Fetches all transactions, count: {result.Data.Count}", ref result);
+            WriteToLog($"Fetches all transactions, count: {result.Data?.Count ?? 0}", ref result);
 
             return result;
         }
