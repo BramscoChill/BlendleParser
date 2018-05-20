@@ -65,7 +65,7 @@ namespace BlendleParser.Core
         #endregion properties
 
         #region public functions
-        public Result CreatePdfFromMonth(MagazineIssues monthIssues, string magazine, int year, int month, int mainFontSize = 25)
+        public Result CreatePdfFromMonth(MagazineIssues monthIssues, string magazine, int year, int month, int day, int mainFontSize = 25)
         {
             Result result = new Result();
             if (monthIssues.IsValid() == false)
@@ -75,18 +75,37 @@ namespace BlendleParser.Core
                 return result;
             }
 
-            int issueCounter = 1;
-            foreach (Issue issue in monthIssues._embedded.issues)
+            if (day > 0)
             {
-                string fullPath = System.IO.Path.Combine(MagazineIssues.GetPath(magazine, year, month), $"MAG_{magazine}_{year}_{month}_" + issueCounter + ".pdf"); ;
-                string fullCoverPath = issue.HasValidCoverUrl() ? issue.GetCoverFullPath(magazine, year, month) : null;
-
-                if (issue.FullItems.Any())
+                Issue issue = monthIssues._embedded.issues.FirstOrDefault(issueInternal => issueInternal.date.Month == month && issueInternal.date.Day == day);
+                if (issue != null)
                 {
-                    var pdfResult = CreatePdfFromItems(issue.FullItems, fullCoverPath, fullPath, mainFontSize);
-                    result.MergeResult(pdfResult);
+                    string fullPath = System.IO.Path.Combine(MagazineIssues.GetPath(magazine, year, month), $"MAG_{magazine}_{year}_{month}_day" + day + ".pdf"); ;
+                    string fullCoverPath = issue.HasValidCoverUrl() ? issue.GetCoverFullPath(magazine, year, month) : null;
+
+                    if (issue.FullItems.Any())
+                    {
+                        var pdfResult = CreatePdfFromItems(issue.FullItems, fullCoverPath, fullPath, mainFontSize);
+                        result.MergeResult(pdfResult);
+                    }
                 }
             }
+            else
+            {
+                int issueCounter = 1;
+                foreach (Issue issue in monthIssues._embedded.issues)
+                {
+                    string fullPath = System.IO.Path.Combine(MagazineIssues.GetPath(magazine, year, month), $"MAG_{magazine}_{year}_{month}_" + issueCounter + ".pdf"); ;
+                    string fullCoverPath = issue.HasValidCoverUrl() ? issue.GetCoverFullPath(magazine, year, month) : null;
+
+                    if (issue.FullItems.Any())
+                    {
+                        var pdfResult = CreatePdfFromItems(issue.FullItems, fullCoverPath, fullPath, mainFontSize);
+                        result.MergeResult(pdfResult);
+                    }
+                }
+            }
+            
 
             return result;
         }
@@ -107,12 +126,26 @@ namespace BlendleParser.Core
                     result.Message = "Canceled task";
                     return result;
                 }
-
-                Result monthResult = CreatePdfFromMonth(month.MagazineIssues, magazine, year, month.MonthInt, mainFontSize);
-                if (monthResult.Succeeded == false)
+                if (month.MagazineIssues.days != null && month.MagazineIssues.days.Count > 1)
                 {
-                    result = monthResult;
-                    break;
+                    for (int i = 0; i < month.MagazineIssues.days.Count; i++)
+                    {
+                        Result monthResult = CreatePdfFromMonth(month.MagazineIssues, magazine, year, month.MonthInt, month.MagazineIssues.days[i], mainFontSize);
+                        if (monthResult.Succeeded == false)
+                        {
+                            result = monthResult;
+                            break;
+                        }
+                    }
+                }
+                else
+                {
+                    Result monthResult = CreatePdfFromMonth(month.MagazineIssues, magazine, year, month.MonthInt, mainFontSize);
+                    if (monthResult.Succeeded == false)
+                    {
+                        result = monthResult;
+                        break;
+                    }
                 }
             }
 

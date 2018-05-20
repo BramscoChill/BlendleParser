@@ -375,6 +375,20 @@ namespace BlendleParser.Core
                     WriteToLog(message, ref result);
                 }
 
+                //we have 1 or more magazine releases in 1 month
+                //if (issuesMagazine.days.Count == issuesMagazine._embedded.issues.Count)
+//                if (issuesMagazine.days.Count > 1)
+//                {
+//                    for (int i = 0; i < issuesMagazine.days.Count; i++)
+//                    {
+//                        var currentMagazine = issuesMagazine._embedded.issues.FirstOrDefault(issue => issue.date.Month == month && issue.date.Day == issuesMagazine.days[i]);
+//                        if (currentMagazine != null)
+//                        {
+//
+//                        }
+//                    }
+//                }
+
                 //if we only want to get the items json month files and not the items with the images
                 if (downloadAllItems)
                 {

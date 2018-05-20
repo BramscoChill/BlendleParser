@@ -225,17 +225,23 @@ namespace BlendleParser
                 string magazine = cbMagazine.Items[cbMagazine.SelectedIndex] as string;
                 ComboboxItem yearSelectedItem = cbYear.Items[cbYear.SelectedIndex] as ComboboxItem;
                 ComboboxItem monthSelectedItem = cbMonth.Items[cbMonth.SelectedIndex] as ComboboxItem;
+                ComboboxItem daySelectedItem = cbDay.Items[cbDay.SelectedIndex] as ComboboxItem;
                 if (magazine.IsNullOrEmpty() == false && yearSelectedItem != null && yearSelectedItem.Value is AllMagazinesInYear
                     && monthSelectedItem != null && monthSelectedItem.Value is MagazineIssues)
                 {
                     var year = yearSelectedItem.Value as AllMagazinesInYear;
                     var month = monthSelectedItem.Value as MagazineIssues;
+                    int day = 0;
+                    if (daySelectedItem != null && daySelectedItem.Value is int)
+                    {
+                        day = (int)daySelectedItem.Value;
+                    }
                     RunActionThread(() =>
                     {
                         Result<MagazineIssues> magazineResult = blendleParser.FetchIssuesMagazine(magazine, year.year, month.month, true, chbForceRedownload.Checked);
                         if (magazineResult.Succeeded)
                         {
-                            var pdfResult = pdfCreator.CreatePdfFromMonth(magazineResult.Data, magazine, year.year, month.month, Convert.ToInt32(nddFontSize.Value));
+                            var pdfResult = pdfCreator.CreatePdfFromMonth(magazineResult.Data, magazine, year.year, month.month, day, Convert.ToInt32(nddFontSize.Value));
                             if (pdfResult.Succeeded)
                             {
                                 WriteToLog($"Successfully created PDF of month for: {magazine}, year: {year.year}, month: {month.month}");
@@ -323,7 +329,26 @@ namespace BlendleParser
         }
         private void cbMonth_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if (allMagazines != null && allMagazines.Any())
+            {
+                cbDay.Items.Clear();
+                ComboBox cb = sender as ComboBox;
+                ComboboxItem monthSelectedItem = cb.Items[cb.SelectedIndex] as ComboboxItem;
+                if (monthSelectedItem != null && monthSelectedItem.Value is MagazineIssues)
+                {
+                    var magazineIssues = monthSelectedItem.Value as MagazineIssues;
+                    //its possible there are multiple magazine releases in one month
+                    if (magazineIssues.days != null && magazineIssues.days.Any())
+                    {
+                        foreach (int day in magazineIssues.days)
+                        {
+                            cbDay.Items.Add(new ComboboxItem(day.ToString(), day));
+                        }
+                        cbDay.Enabled = magazineIssues.days.Count > 1;
+                        cbDay.SelectedIndex = 0;
+                    }
+                }
+            }
         }
         private void btnCancel_Click(object sender, EventArgs e)
         {
@@ -530,7 +555,7 @@ namespace BlendleParser
             if (Configuration.Instance.UserBaseProfile.IsValid())
             {
                 Result<List<Transaction>> transactionsResult = blendleParser.FetchAllTransactions();
-                if (transactionsResult.Succeeded)
+                if (transactionsResult.Succeeded && transactionsResult.Data != null)
                 {
                     bool validInput = false;
                     Func<Transaction, bool> transactionFilter = (t) => true;
